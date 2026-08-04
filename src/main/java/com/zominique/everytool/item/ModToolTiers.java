@@ -11,7 +11,7 @@ public class ModToolTiers {
     // STONE STRENGTH TOOLS
 
     // Coal tools automatically smelt items. Coal weapons deal double damage to targets who are on fire
-    public static final Tier COAL = new ForgeTier(15, 1.0f, 0.5f, 3,
+    public static final Tier COAL = new ForgeTier(15, 1.5f, 0.5f, 3,
             ModTags.Blocks.NEEDS_COAL_TOOL, () -> Ingredient.of(ItemTags.COALS),
             ModTags.Blocks.INCORRECT_FOR_COAL_TOOL);
     // Flint tools deal +1 critical damage

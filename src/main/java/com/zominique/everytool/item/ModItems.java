@@ -1,7 +1,7 @@
 package com.zominique.everytool.item;
 
 import com.zominique.everytool.Everytool;
-import com.zominique.everytool.item.custom.CoalPickaxeItem;
+import com.zominique.everytool.item.custom.coal.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -13,7 +13,7 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Everytool.MOD_ID);
 
     public static final RegistryObject<Item> COAL_SWORD = ITEMS.register("coal_sword",
-            () -> new SwordItem(ModToolTiers.COAL, new Item.Properties().attributes(SwordItem.createAttributes(
+            () -> new CoalSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.COAL, 3, -2.4f))));
     public static final RegistryObject<Item> FLINT_SWORD = ITEMS.register("flint_sword",
             () -> new SwordItem(ModToolTiers.FLINT, new Item.Properties().attributes(SwordItem.createAttributes(
@@ -75,7 +75,7 @@ public class ModItems {
                     ModToolTiers.ECHO, 1, -2.8f))));
 
     public static final RegistryObject<Item> COAL_AXE = ITEMS.register("coal_axe",
-            () -> new AxeItem(ModToolTiers.COAL, new Item.Properties().attributes(AxeItem.createAttributes(
+            () -> new CoalAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.COAL, 6, -3.2f))));
     public static final RegistryObject<Item> FLINT_AXE = ITEMS.register("flint_axe",
             () -> new AxeItem(ModToolTiers.FLINT, new Item.Properties().attributes(AxeItem.createAttributes(
@@ -106,7 +106,7 @@ public class ModItems {
                     ModToolTiers.ECHO, 5, -3.0f))));
 
     public static final RegistryObject<Item> COAL_SHOVEL = ITEMS.register("coal_shovel",
-            () -> new ShovelItem(ModToolTiers.COAL, new Item.Properties().attributes(ShovelItem.createAttributes(
+            () -> new CoalShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.COAL, 2, -3.0f))));
     public static final RegistryObject<Item> FLINT_SHOVEL = ITEMS.register("flint_shovel",
             () -> new ShovelItem(ModToolTiers.FLINT, new Item.Properties().attributes(ShovelItem.createAttributes(
@@ -137,7 +137,7 @@ public class ModItems {
                     ModToolTiers.ECHO, 2, -3.0f))));
 
     public static final RegistryObject<Item> COAL_HOE = ITEMS.register("coal_hoe",
-            () -> new HoeItem(ModToolTiers.COAL, new Item.Properties().attributes(HoeItem.createAttributes(
+            () -> new CoalHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.COAL, 0, -3.0f))));
     public static final RegistryObject<Item> FLINT_HOE = ITEMS.register("flint_hoe",
             () -> new HoeItem(ModToolTiers.FLINT, new Item.Properties().attributes(HoeItem.createAttributes(

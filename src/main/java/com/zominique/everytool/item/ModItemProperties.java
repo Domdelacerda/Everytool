@@ -1,12 +1,11 @@
 package com.zominique.everytool.item;
 
 import com.zominique.everytool.Everytool;
-import com.zominique.everytool.item.custom.ICoalTool;
+import com.zominique.everytool.item.custom.coal.ICoalTool;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;

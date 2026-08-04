@@ -2,7 +2,7 @@ package com.zominique.everytool.conditions.custom;
 
 import com.mojang.serialization.MapCodec;
 import com.zominique.everytool.conditions.ModLootConditions;
-import com.zominique.everytool.item.custom.ICoalTool;
+import com.zominique.everytool.item.custom.coal.ICoalTool;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
