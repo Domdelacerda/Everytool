@@ -6,6 +6,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -24,9 +25,24 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("item/" + baseName));
     }
 
+    private void handheldCoalItem(Item item) {
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
+        String baseName = id.getPath();
+        String activeName = "item/" + baseName + "_active";
+
+        ItemModelBuilder builder = getBuilder(baseName)
+                .parent(new ModelFile.UncheckedModelFile("item/handheld"))
+                .texture("layer0", modLoc("item/" + baseName));
+        withExistingParent(activeName, mcLoc("item/handheld")).texture
+                ("layer0", modLoc(activeName));
+        builder.override().predicate(ResourceLocation.fromNamespaceAndPath
+                        (Everytool.MOD_ID, "lit"), 1).model(getExistingFile(
+                                modLoc(activeName))).end();
+    }
+
     @Override
     protected void registerModels() {
-        handheldItem(ModItems.COAL_SWORD.get());
+        handheldCoalItem(ModItems.COAL_SWORD.get());
         handheldItem(ModItems.FLINT_SWORD.get());
         handheldItem(ModItems.REDSTONE_SWORD.get());
         handheldItem(ModItems.LAPIS_SWORD.get());
@@ -37,7 +53,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ANCIENT_SWORD.get());
         handheldItem(ModItems.ECHO_SWORD.get());
 
-        handheldItem(ModItems.COAL_PICKAXE.get());
+        handheldCoalItem(ModItems.COAL_PICKAXE.get());
         handheldItem(ModItems.FLINT_PICKAXE.get());
         handheldItem(ModItems.REDSTONE_PICKAXE.get());
         handheldItem(ModItems.LAPIS_PICKAXE.get());
@@ -48,7 +64,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ANCIENT_PICKAXE.get());
         handheldItem(ModItems.ECHO_PICKAXE.get());
 
-        handheldItem(ModItems.COAL_AXE.get());
+        handheldCoalItem(ModItems.COAL_AXE.get());
         handheldItem(ModItems.FLINT_AXE.get());
         handheldItem(ModItems.REDSTONE_AXE.get());
         handheldItem(ModItems.LAPIS_AXE.get());
@@ -59,7 +75,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ANCIENT_AXE.get());
         handheldItem(ModItems.ECHO_AXE.get());
 
-        handheldItem(ModItems.COAL_SHOVEL.get());
+        handheldCoalItem(ModItems.COAL_SHOVEL.get());
         handheldItem(ModItems.FLINT_SHOVEL.get());
         handheldItem(ModItems.REDSTONE_SHOVEL.get());
         handheldItem(ModItems.LAPIS_SHOVEL.get());
@@ -70,7 +86,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ANCIENT_SHOVEL.get());
         handheldItem(ModItems.ECHO_SHOVEL.get());
 
-        handheldItem(ModItems.COAL_HOE.get());
+        handheldCoalItem(ModItems.COAL_HOE.get());
         handheldItem(ModItems.FLINT_HOE.get());
         handheldItem(ModItems.REDSTONE_HOE.get());
         handheldItem(ModItems.LAPIS_HOE.get());

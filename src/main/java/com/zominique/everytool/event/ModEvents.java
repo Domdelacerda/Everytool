@@ -22,37 +22,4 @@ import java.util.*;
 
 @Mod.EventBusSubscriber(modid = Everytool.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
-    @SubscribeEvent
-    public static void onCoalToolUsage(BlockEvent.BreakEvent event) {
-        Player player = event.getPlayer();
-        ItemStack mainHandItem = player.getMainHandItem();
-
-        if (!(mainHandItem.getItem() instanceof ICoalTool coalTool)
-                //|| !coalTool.isLit(mainHandItem)
-                || !(player instanceof ServerPlayer serverPlayer)) {
-            return;
-        }
-
-        ServerLevel serverLevel = serverPlayer.serverLevel();
-        LootParams.Builder params = new LootParams.Builder(serverLevel)
-                .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(event.getPos()))
-                .withParameter(LootContextParams.TOOL, mainHandItem)
-                .withOptionalParameter(LootContextParams.BLOCK_ENTITY, serverLevel.getBlockEntity(event.getPos()));
-        List<ItemStack> smeltedDrops = new ArrayList<>();
-        for (ItemStack drop : event.getState().getDrops(params)) {
-            Optional<RecipeHolder<SmeltingRecipe>> recipe = serverLevel.getRecipeManager()
-                    .getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput(drop), serverLevel);
-
-            if (recipe.isPresent()) {
-                ItemStack result = recipe.get().value().getResultItem(serverLevel.registryAccess()).copy();
-                result.setCount(result.getCount() * drop.getCount());
-                smeltedDrops.add(result);
-            } else {
-                smeltedDrops.add(drop);
-            }
-        }
-
-        event.getState().getDrops(params).clear();
-        event.getState().getDrops(params).addAll(smeltedDrops);
-    }
 }
