@@ -1,0 +1,8 @@
+{
+  "type": "everytool:coal_smelting",
+  "conditions": [
+    {
+      "condition": "everytool:coal_tool_lit"
+    }
+  ]
+}

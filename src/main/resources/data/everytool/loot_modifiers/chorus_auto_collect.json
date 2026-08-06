@@ -1,0 +1,8 @@
+{
+  "type": "everytool:chorus_auto_collect",
+  "conditions": [
+    {
+      "condition": "everytool:chorus_tool_auto_collect"
+    }
+  ]
+}

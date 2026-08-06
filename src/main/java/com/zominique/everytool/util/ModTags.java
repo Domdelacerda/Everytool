@@ -32,8 +32,8 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_ANCIENT_TOOL = createTag("incorrect_for_ancient_tool");
         public static final TagKey<Block> NEEDS_ECHO_TOOL = createTag("needs_echo_tool");
         public static final TagKey<Block> INCORRECT_FOR_ECHO_TOOL = createTag("incorrect_for_echo_tool");
-        public static final TagKey<Block> NEEDS_PURPUR_TOOL = createTag("needs_purpur_tool");
-        public static final TagKey<Block> INCORRECT_FOR_PURPUR_TOOL = createTag("incorrect_for_purpur_tool");
+        public static final TagKey<Block> NEEDS_CHORUS_TOOL = createTag("needs_purpur_tool");
+        public static final TagKey<Block> INCORRECT_FOR_CHORUS_TOOL = createTag("incorrect_for_purpur_tool");
 
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, name));

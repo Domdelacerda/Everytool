@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
-    "everytool:coal_smelting"
+    "everytool:coal_smelting",
+    "everytool:chorus_auto_collect"
   ]
 }

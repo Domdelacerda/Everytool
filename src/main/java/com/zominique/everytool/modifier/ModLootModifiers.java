@@ -1,8 +1,8 @@
 package com.zominique.everytool.modifier;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.zominique.everytool.Everytool;
+import com.zominique.everytool.modifier.custom.ChorusAutoCollectModifier;
 import com.zominique.everytool.modifier.custom.CoalSmeltingModifier;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,6 +17,8 @@ public class ModLootModifiers {
 
     public static final RegistryObject<MapCodec<CoalSmeltingModifier>> COAL_SMELTING =
             LOOT_MODIFIER_SERIALIZERS.register("coal_smelting", () -> CoalSmeltingModifier.CODEC);
+    public static final RegistryObject<MapCodec<ChorusAutoCollectModifier>> CHORUS_AUTO_COLLECT =
+            LOOT_MODIFIER_SERIALIZERS.register("chorus_auto_collect", () -> ChorusAutoCollectModifier.CODEC);
 
     public static void register(IEventBus eventBus) {
         LOOT_MODIFIER_SERIALIZERS.register(eventBus);

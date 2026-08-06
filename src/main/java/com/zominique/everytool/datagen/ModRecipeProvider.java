@@ -36,6 +36,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildSwordItem(pRecipeOutput, Items.PRISMARINE_CRYSTALS, ModItems.PRISMARINE_SWORD.get(), "has_prismarine_crystals");
         buildSwordItem(pRecipeOutput, Items.NETHERITE_SCRAP, ModItems.ANCIENT_SWORD.get(), "has_netherite_scrap");
         buildSwordItem(pRecipeOutput, Items.ECHO_SHARD, ModItems.ECHO_SWORD.get(), "has_echo_shard");
+        buildSwordItem(pRecipeOutput, Items.POPPED_CHORUS_FRUIT, ModItems.CHORUS_SWORD.get(), "has_popped_chorus_fruit");
 
         buildPickaxeItem(pRecipeOutput, Items.COAL, ModItems.COAL_PICKAXE.get(), "has_coal");
         buildPickaxeItem(pRecipeOutput, Items.FLINT, ModItems.FLINT_PICKAXE.get(), "has_flint");
@@ -47,6 +48,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildPickaxeItem(pRecipeOutput, Items.PRISMARINE_CRYSTALS, ModItems.PRISMARINE_PICKAXE.get(), "has_prismarine_crystals");
         buildPickaxeItem(pRecipeOutput, Items.NETHERITE_SCRAP, ModItems.ANCIENT_PICKAXE.get(), "has_netherite_scrap");
         buildPickaxeItem(pRecipeOutput, Items.ECHO_SHARD, ModItems.ECHO_PICKAXE.get(), "has_echo_shard");
+        buildPickaxeItem(pRecipeOutput, Items.POPPED_CHORUS_FRUIT, ModItems.CHORUS_PICKAXE.get(), "has_popped_chorus_fruit");
 
         buildAxeItem(pRecipeOutput, Items.COAL, ModItems.COAL_AXE.get(), "has_coal");
         buildAxeItem(pRecipeOutput, Items.FLINT, ModItems.FLINT_AXE.get(), "has_flint");
@@ -58,6 +60,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildAxeItem(pRecipeOutput, Items.PRISMARINE_CRYSTALS, ModItems.PRISMARINE_AXE.get(), "has_prismarine_crystals");
         buildAxeItem(pRecipeOutput, Items.NETHERITE_SCRAP, ModItems.ANCIENT_AXE.get(), "has_netherite_scrap");
         buildAxeItem(pRecipeOutput, Items.ECHO_SHARD, ModItems.ECHO_AXE.get(), "has_echo_shard");
+        buildAxeItem(pRecipeOutput, Items.POPPED_CHORUS_FRUIT, ModItems.CHORUS_AXE.get(), "has_popped_chorus_fruit");
 
         buildShovelItem(pRecipeOutput, Items.COAL, ModItems.COAL_SHOVEL.get(), "has_coal");
         buildShovelItem(pRecipeOutput, Items.FLINT, ModItems.FLINT_SHOVEL.get(), "has_flint");
@@ -69,6 +72,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildShovelItem(pRecipeOutput, Items.PRISMARINE_CRYSTALS, ModItems.PRISMARINE_SHOVEL.get(), "has_prismarine_crystals");
         buildShovelItem(pRecipeOutput, Items.NETHERITE_SCRAP, ModItems.ANCIENT_SHOVEL.get(), "has_netherite_scrap");
         buildShovelItem(pRecipeOutput, Items.ECHO_SHARD, ModItems.ECHO_SHOVEL.get(), "has_echo_shard");
+        buildShovelItem(pRecipeOutput, Items.POPPED_CHORUS_FRUIT, ModItems.CHORUS_SHOVEL.get(), "has_popped_chorus_fruit");
 
         buildHoeItem(pRecipeOutput, Items.COAL, ModItems.COAL_HOE.get(), "has_coal");
         buildHoeItem(pRecipeOutput, Items.FLINT, ModItems.FLINT_HOE.get(), "has_flint");
@@ -80,6 +84,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildHoeItem(pRecipeOutput, Items.PRISMARINE_CRYSTALS, ModItems.PRISMARINE_HOE.get(), "has_prismarine_crystals");
         buildHoeItem(pRecipeOutput, Items.NETHERITE_SCRAP, ModItems.ANCIENT_HOE.get(), "has_netherite_scrap");
         buildHoeItem(pRecipeOutput, Items.ECHO_SHARD, ModItems.ECHO_HOE.get(), "has_echo_shard");
+        buildHoeItem(pRecipeOutput, Items.POPPED_CHORUS_FRUIT, ModItems.CHORUS_HOE.get(), "has_popped_chorus_fruit");
     }
 
     private void buildSwordItem(RecipeOutput pRecipeOutput, Item item, Item sword, String unlockedBy) {

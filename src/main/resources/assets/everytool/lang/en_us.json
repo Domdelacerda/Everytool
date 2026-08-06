@@ -9,6 +9,7 @@
   "item.everytool.prismarine_sword": "Prismarine Sword",
   "item.everytool.ancient_sword": "Ancient Sword",
   "item.everytool.echo_sword": "Echo Sword",
+  "item.everytool.chorus_sword": "Chorus Sword",
   "item.everytool.coal_pickaxe": "Coal Pickaxe",
   "item.everytool.flint_pickaxe": "Flint Pickaxe",
   "item.everytool.redstone_pickaxe": "Redstone Pickaxe",
@@ -19,6 +20,7 @@
   "item.everytool.prismarine_pickaxe": "Prismarine Pickaxe",
   "item.everytool.ancient_pickaxe": "Ancient Pickaxe",
   "item.everytool.echo_pickaxe": "Echo Pickaxe",
+  "item.everytool.chorus_pickaxe": "Chorus Pickaxe",
   "item.everytool.coal_axe": "Coal Axe",
   "item.everytool.flint_axe": "Flint Axe",
   "item.everytool.redstone_axe": "Redstone Axe",
@@ -29,6 +31,7 @@
   "item.everytool.prismarine_axe": "Prismarine Axe",
   "item.everytool.ancient_axe": "Ancient Axe",
   "item.everytool.echo_axe": "Echo Axe",
+  "item.everytool.chorus_axe": "Chorus Axe",
   "item.everytool.coal_shovel": "Coal Shovel",
   "item.everytool.flint_shovel": "Flint Shovel",
   "item.everytool.redstone_shovel": "Redstone Shovel",
@@ -39,6 +42,7 @@
   "item.everytool.prismarine_shovel": "Prismarine Shovel",
   "item.everytool.ancient_shovel": "Ancient Shovel",
   "item.everytool.echo_shovel": "Echo Shovel",
+  "item.everytool.chorus_shovel": "Chorus Shovel",
   "item.everytool.coal_hoe": "Coal Hoe",
   "item.everytool.flint_hoe": "Flint Hoe",
   "item.everytool.redstone_hoe": "Redstone Hoe",
@@ -48,5 +52,6 @@
   "item.everytool.quartz_hoe": "Quartz Hoe",
   "item.everytool.prismarine_hoe": "Prismarine Hoe",
   "item.everytool.ancient_hoe": "Ancient Hoe",
-  "item.everytool.echo_hoe": "Echo Hoe"
+  "item.everytool.echo_hoe": "Echo Hoe",
+  "item.everytool.chorus_hoe": "Chorus Hoe"
 }

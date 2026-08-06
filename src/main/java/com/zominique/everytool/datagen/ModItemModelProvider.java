@@ -52,6 +52,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.PRISMARINE_SWORD.get());
         handheldItem(ModItems.ANCIENT_SWORD.get());
         handheldItem(ModItems.ECHO_SWORD.get());
+        handheldItem(ModItems.CHORUS_SWORD.get());
 
         handheldCoalItem(ModItems.COAL_PICKAXE.get());
         handheldItem(ModItems.FLINT_PICKAXE.get());
@@ -63,6 +64,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.PRISMARINE_PICKAXE.get());
         handheldItem(ModItems.ANCIENT_PICKAXE.get());
         handheldItem(ModItems.ECHO_PICKAXE.get());
+        handheldItem(ModItems.CHORUS_PICKAXE.get());
 
         handheldCoalItem(ModItems.COAL_AXE.get());
         handheldItem(ModItems.FLINT_AXE.get());
@@ -74,6 +76,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.PRISMARINE_AXE.get());
         handheldItem(ModItems.ANCIENT_AXE.get());
         handheldItem(ModItems.ECHO_AXE.get());
+        handheldItem(ModItems.CHORUS_AXE.get());
 
         handheldCoalItem(ModItems.COAL_SHOVEL.get());
         handheldItem(ModItems.FLINT_SHOVEL.get());
@@ -85,6 +88,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.PRISMARINE_SHOVEL.get());
         handheldItem(ModItems.ANCIENT_SHOVEL.get());
         handheldItem(ModItems.ECHO_SHOVEL.get());
+        handheldItem(ModItems.CHORUS_SHOVEL.get());
 
         handheldCoalItem(ModItems.COAL_HOE.get());
         handheldItem(ModItems.FLINT_HOE.get());
@@ -96,5 +100,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.PRISMARINE_HOE.get());
         handheldItem(ModItems.ANCIENT_HOE.get());
         handheldItem(ModItems.ECHO_HOE.get());
+        handheldItem(ModItems.CHORUS_HOE.get());
     }
 }

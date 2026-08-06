@@ -8,7 +8,6 @@ import com.zominique.everytool.fluid.ModFluids;
 import com.zominique.everytool.item.ModItems;
 import com.zominique.everytool.modifier.ModLootModifiers;
 import com.zominique.everytool.particle.ModParticles;
-import com.zominique.everytool.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
@@ -66,6 +65,7 @@ public class Everytool
             event.accept(ModItems.PRISMARINE_SWORD);
             event.accept(ModItems.ANCIENT_SWORD);
             event.accept(ModItems.ECHO_SWORD);
+            event.accept(ModItems.CHORUS_SWORD);
 
             event.accept(ModItems.COAL_AXE);
             event.accept(ModItems.FLINT_AXE);
@@ -77,6 +77,7 @@ public class Everytool
             event.accept(ModItems.PRISMARINE_AXE);
             event.accept(ModItems.ANCIENT_AXE);
             event.accept(ModItems.ECHO_AXE);
+            event.accept(ModItems.CHORUS_AXE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
@@ -129,6 +130,11 @@ public class Everytool
             event.accept(ModItems.ECHO_PICKAXE);
             event.accept(ModItems.ECHO_AXE);
             event.accept(ModItems.ECHO_HOE);
+
+            event.accept(ModItems.CHORUS_SHOVEL);
+            event.accept(ModItems.CHORUS_PICKAXE);
+            event.accept(ModItems.CHORUS_AXE);
+            event.accept(ModItems.CHORUS_HOE);
         }
     }
 
@@ -141,12 +147,6 @@ public class Everytool
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            ModItemProperties.addCustomItemProperties();
-        }
-
         @SubscribeEvent
         public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
         }

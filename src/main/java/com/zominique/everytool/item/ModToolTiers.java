@@ -57,13 +57,14 @@ public class ModToolTiers {
 
     // NETHERITE STRENGTH TOOLS
 
-    // Echo tools and weapons have no special effects
+    // Echo tools and weapons can be tuned to a specific enemy or block. When breaking a block or hitting an
+    // enemy near the tuned block/mob, the tool will make a sculk sound
     public static final Tier ECHO = new ForgeTier(2531, 10.0f, 5.0f, 17,
             ModTags.Blocks.NEEDS_ECHO_TOOL, () -> Ingredient.of(Items.ECHO_SHARD),
             ModTags.Blocks.INCORRECT_FOR_ECHO_TOOL);
-    // Purpur tools automatically teleport items into your inventory when breaking blocks
-    // Purpur weapons teleport enemies randomly when hitting them
-    public static final Tier PURPUR = new ForgeTier(2531, 10.0f, 5.0f, 17,
-            ModTags.Blocks.NEEDS_PURPUR_TOOL, () -> Ingredient.of(Items.POPPED_CHORUS_FRUIT),
-            ModTags.Blocks.INCORRECT_FOR_PURPUR_TOOL);
+    // Chorus tools automatically teleport items into your inventory when breaking blocks
+    // Chorus weapons teleport mob drops into your inventory
+    public static final Tier CHORUS = new ForgeTier(2531, 9.5f, 5.0f, 17,
+            ModTags.Blocks.NEEDS_CHORUS_TOOL, () -> Ingredient.of(Items.POPPED_CHORUS_FRUIT),
+            ModTags.Blocks.INCORRECT_FOR_CHORUS_TOOL);
 }
