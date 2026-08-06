@@ -3,6 +3,7 @@ package com.zominique.everytool.item;
 import com.zominique.everytool.Everytool;
 import com.zominique.everytool.item.custom.chorus.*;
 import com.zominique.everytool.item.custom.coal.*;
+import com.zominique.everytool.item.custom.echo.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -41,7 +42,7 @@ public class ModItems {
             () -> new SwordItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(SwordItem.createAttributes(
                     ModToolTiers.ANCIENT, 4, -3.4f))));
     public static final RegistryObject<Item> ECHO_SWORD = ITEMS.register("echo_sword",
-            () -> new SwordItem(ModToolTiers.ECHO, new Item.Properties().fireResistant().attributes(SwordItem.createAttributes(
+            () -> new EchoSwordItem(new Item.Properties().fireResistant().attributes(SwordItem.createAttributes(
                     ModToolTiers.ECHO, 3, -2.4f))));
     public static final RegistryObject<Item> CHORUS_SWORD = ITEMS.register("chorus_sword",
             () -> new ChorusSwordItem(new Item.Properties().fireResistant().attributes(SwordItem.createAttributes(
@@ -75,7 +76,7 @@ public class ModItems {
             () -> new PickaxeItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.ANCIENT, 2, -3.8f))));
     public static final RegistryObject<Item> ECHO_PICKAXE = ITEMS.register("echo_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.ECHO, new Item.Properties().fireResistant().attributes(PickaxeItem.createAttributes(
+            () -> new EchoPickaxeItem(new Item.Properties().fireResistant().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.ECHO, 1, -2.8f))));
     public static final RegistryObject<Item> CHORUS_PICKAXE = ITEMS.register("chorus_pickaxe",
             () -> new ChorusPickaxeItem(new Item.Properties().fireResistant().attributes(PickaxeItem.createAttributes(
@@ -109,7 +110,7 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(
                     ModToolTiers.ANCIENT, 6, -3.8f))));
     public static final RegistryObject<Item> ECHO_AXE = ITEMS.register("echo_axe",
-            () -> new AxeItem(ModToolTiers.ECHO, new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(
+            () -> new EchoAxeItem(new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(
                     ModToolTiers.ECHO, 5, -3.0f))));
     public static final RegistryObject<Item> CHORUS_AXE = ITEMS.register("chorus_axe",
             () -> new ChorusAxeItem(new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(
@@ -143,7 +144,7 @@ public class ModItems {
             () -> new ShovelItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(ShovelItem.createAttributes(
                     ModToolTiers.ANCIENT, 3, -3.8f))));
     public static final RegistryObject<Item> ECHO_SHOVEL = ITEMS.register("echo_shovel",
-            () -> new ShovelItem(ModToolTiers.ECHO, new Item.Properties().fireResistant().attributes(ShovelItem.createAttributes(
+            () -> new EchoShovelItem(new Item.Properties().fireResistant().attributes(ShovelItem.createAttributes(
                     ModToolTiers.ECHO, 2, -3.0f))));
     public static final RegistryObject<Item> CHORUS_SHOVEL = ITEMS.register("chorus_shovel",
             () -> new ChorusShovelItem(new Item.Properties().fireResistant().attributes(ShovelItem.createAttributes(
@@ -177,7 +178,7 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
                     ModToolTiers.ANCIENT, 0, -1.0f))));
     public static final RegistryObject<Item> ECHO_HOE = ITEMS.register("echo_hoe",
-            () -> new HoeItem(ModToolTiers.ECHO, new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
+            () -> new EchoHoeItem(new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
                     ModToolTiers.ECHO, 1, -0.0f))));
     public static final RegistryObject<Item> CHORUS_HOE = ITEMS.register("chorus_hoe",
             () -> new ChorusHoeItem(new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(

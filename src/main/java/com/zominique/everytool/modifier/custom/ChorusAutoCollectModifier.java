@@ -49,8 +49,10 @@ public class ChorusAutoCollectModifier extends LootModifier {
         }
 
         if (pickedUpAnything) {
-            serverLevel.playSound(null, collector.blockPosition(), SoundEvents.ITEM_PICKUP,
+            serverLevel.playSound(null, collector.blockPosition(), SoundEvents.ENDERMAN_TELEPORT,
                     SoundSource.PLAYERS, 0.2F, 1.4F + serverLevel.getRandom().nextFloat() * 0.5F);
+            serverLevel.playSound(null, collector.blockPosition(), SoundEvents.ITEM_PICKUP,
+                    SoundSource.PLAYERS, 0.5F, 1.4F + serverLevel.getRandom().nextFloat() * 0.5F);
         }
 
         return new ObjectArrayList<>(leftover);

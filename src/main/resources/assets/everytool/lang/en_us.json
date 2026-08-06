@@ -53,5 +53,6 @@
   "item.everytool.prismarine_hoe": "Prismarine Hoe",
   "item.everytool.ancient_hoe": "Ancient Hoe",
   "item.everytool.echo_hoe": "Echo Hoe",
-  "item.everytool.chorus_hoe": "Chorus Hoe"
+  "item.everytool.chorus_hoe": "Chorus Hoe",
+  "message.yourmod.echo_tuned": "Tuned to frequency of: %s"
 }
