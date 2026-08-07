@@ -25,7 +25,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("item/" + baseName));
     }
 
-    private void handheldCoalItem(Item item) {
+    private void handheldPredicateItem(Item item, String predicate) {
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
         String baseName = id.getPath();
         String activeName = "item/" + baseName + "_active";
@@ -36,23 +36,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(activeName, mcLoc("item/handheld")).texture
                 ("layer0", modLoc(activeName));
         builder.override().predicate(ResourceLocation.fromNamespaceAndPath
-                        (Everytool.MOD_ID, "lit"), 1).model(getExistingFile(
-                                modLoc(activeName))).end();
+                (Everytool.MOD_ID, predicate), 1).model(getExistingFile(
+                modLoc(activeName))).end();
+    }
+
+    private void handheldCoalItem(Item item) {
+        handheldPredicateItem(item, "lit");
     }
 
     private void handheldEchoItem(Item item) {
-        ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
-        String baseName = id.getPath();
-        String activeName = "item/" + baseName + "_active";
-
-        ItemModelBuilder builder = getBuilder(baseName)
-                .parent(new ModelFile.UncheckedModelFile("item/handheld"))
-                .texture("layer0", modLoc("item/" + baseName));
-        withExistingParent(activeName, mcLoc("item/handheld")).texture
-                ("layer0", modLoc(activeName));
-        builder.override().predicate(ResourceLocation.fromNamespaceAndPath
-                (Everytool.MOD_ID, "resonating"), 1).model(getExistingFile(
-                modLoc(activeName))).end();
+        handheldPredicateItem(item, "resonating");
     }
 
     @Override

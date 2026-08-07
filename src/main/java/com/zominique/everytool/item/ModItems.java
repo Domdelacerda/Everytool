@@ -4,6 +4,7 @@ import com.zominique.everytool.Everytool;
 import com.zominique.everytool.item.custom.chorus.*;
 import com.zominique.everytool.item.custom.coal.*;
 import com.zominique.everytool.item.custom.echo.*;
+import com.zominique.everytool.item.custom.lapis.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -24,7 +25,7 @@ public class ModItems {
             () -> new SwordItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.REDSTONE, 3, -2.4f))));
     public static final RegistryObject<Item> LAPIS_SWORD = ITEMS.register("lapis_sword",
-            () -> new SwordItem(ModToolTiers.LAPIS, new Item.Properties().attributes(SwordItem.createAttributes(
+            () -> new LapisSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.LAPIS, 3, -2.4f))));
     public static final RegistryObject<Item> EMERALD_SWORD = ITEMS.register("emerald_sword",
             () -> new SwordItem(ModToolTiers.EMERALD, new Item.Properties().attributes(SwordItem.createAttributes(
@@ -58,7 +59,7 @@ public class ModItems {
             () -> new PickaxeItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.REDSTONE, 1, -2.8f))));
     public static final RegistryObject<Item> LAPIS_PICKAXE = ITEMS.register("lapis_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.LAPIS, new Item.Properties().attributes(PickaxeItem.createAttributes(
+            () -> new LapisPickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.LAPIS, 1, -2.8f))));
     public static final RegistryObject<Item> EMERALD_PICKAXE = ITEMS.register("emerald_pickaxe",
             () -> new PickaxeItem(ModToolTiers.EMERALD, new Item.Properties().attributes(PickaxeItem.createAttributes(
@@ -92,7 +93,7 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.REDSTONE, 6, -3.1f))));
     public static final RegistryObject<Item> LAPIS_AXE = ITEMS.register("lapis_axe",
-            () -> new AxeItem(ModToolTiers.LAPIS, new Item.Properties().attributes(AxeItem.createAttributes(
+            () -> new LapisAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.LAPIS, 6, -3.1f))));
     public static final RegistryObject<Item> EMERALD_AXE = ITEMS.register("emerald_axe",
             () -> new AxeItem(ModToolTiers.EMERALD, new Item.Properties().attributes(AxeItem.createAttributes(
@@ -126,7 +127,7 @@ public class ModItems {
             () -> new ShovelItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.REDSTONE, 2, -3.0f))));
     public static final RegistryObject<Item> LAPIS_SHOVEL = ITEMS.register("lapis_shovel",
-            () -> new ShovelItem(ModToolTiers.LAPIS, new Item.Properties().attributes(ShovelItem.createAttributes(
+            () -> new LapisShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.LAPIS, 2, -3.0f))));
     public static final RegistryObject<Item> EMERALD_SHOVEL = ITEMS.register("emerald_shovel",
             () -> new ShovelItem(ModToolTiers.EMERALD, new Item.Properties().attributes(ShovelItem.createAttributes(
@@ -160,7 +161,7 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.REDSTONE, 0, -1.0f))));
     public static final RegistryObject<Item> LAPIS_HOE = ITEMS.register("lapis_hoe",
-            () -> new HoeItem(ModToolTiers.LAPIS, new Item.Properties().attributes(HoeItem.createAttributes(
+            () -> new LapisHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.LAPIS, 0, -1.0f))));
     public static final RegistryObject<Item> EMERALD_HOE = ITEMS.register("emerald_hoe",
             () -> new HoeItem(ModToolTiers.EMERALD, new Item.Properties().attributes(HoeItem.createAttributes(

@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.Mod;
 public class EchoToolEventHandler {
 
     // Scan radius for echo tool
-    private static final int SCAN_RADIUS = 2;
+    private static final int SCAN_RADIUS = 3;
 
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
