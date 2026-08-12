@@ -1,0 +1,8 @@
+{
+  "type": "everytool:warden_echo_template_drop",
+  "conditions": [
+    {
+      "condition": "everytool:is_warden"
+    }
+  ]
+}

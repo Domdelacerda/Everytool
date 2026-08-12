@@ -109,5 +109,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ANCIENT_HOE.get());
         handheldEchoItem(ModItems.ECHO_HOE.get());
         handheldItem(ModItems.CHORUS_HOE.get());
+
+        basicItem(ModItems.CHORUS_UPGRADE_TEMPLATE.get());
+        basicItem(ModItems.ECHO_UPGRADE_TEMPLATE.get());
     }
 }

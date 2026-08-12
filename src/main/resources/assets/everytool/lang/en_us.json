@@ -54,5 +54,17 @@
   "item.everytool.ancient_hoe": "Ancient Hoe",
   "item.everytool.echo_hoe": "Echo Hoe",
   "item.everytool.chorus_hoe": "Chorus Hoe",
-  "message.yourmod.echo_tuned": "Tuned to frequency of: %s"
+  "message.yourmod.echo_tuned": "Tuned to frequency of: %s",
+  "item.everytool.chorus_upgrade_smithing_template": "Smithing Template",
+  "item.everytool.smithing_template.chorus_upgrade.applies_to": "Netherite Equipment",
+  "item.everytool.smithing_template.chorus_upgrade.ingredients": "Popped Chorus Fruit",
+  "upgrade.everytool.chorus_upgrade": "Chorus Upgrade",
+  "item.everytool.smithing_template.chorus_upgrade.base_slot_description": "Add netherite equipment",
+  "item.everytool.smithing_template.chorus_upgrade.additions_slot_description": "Add popped chorus fruit",
+  "item.everytool.echo_upgrade_smithing_template": "Smithing Template",
+  "item.everytool.smithing_template.echo_upgrade.applies_to": "Chorus Equipment",
+  "item.everytool.smithing_template.echo_upgrade.ingredients": "Echo Shard",
+  "upgrade.everytool.echo_upgrade": "Echo Upgrade",
+  "item.everytool.smithing_template.echo_upgrade.base_slot_description": "Add chorus equipment",
+  "item.everytool.smithing_template.echo_upgrade.additions_slot_description": "Add echo shard"
 }

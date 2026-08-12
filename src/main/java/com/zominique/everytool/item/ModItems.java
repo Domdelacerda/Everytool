@@ -5,11 +5,17 @@ import com.zominique.everytool.item.custom.chorus.*;
 import com.zominique.everytool.item.custom.coal.*;
 import com.zominique.everytool.item.custom.echo.*;
 import com.zominique.everytool.item.custom.lapis.*;
+import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -184,6 +190,85 @@ public class ModItems {
     public static final RegistryObject<Item> CHORUS_HOE = ITEMS.register("chorus_hoe",
             () -> new ChorusHoeItem(new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
                     ModToolTiers.CHORUS, 1, -0.0f))));
+
+    private static final ChatFormatting TITLE_FORMAT = ChatFormatting.GRAY;
+    private static final ChatFormatting DESCRIPTION_FORMAT = ChatFormatting.BLUE;
+
+    private static final ResourceLocation EMPTY_SLOT_HOE = ResourceLocation.withDefaultNamespace("item/empty_slot_hoe");
+    private static final ResourceLocation EMPTY_SLOT_AXE = ResourceLocation.withDefaultNamespace("item/empty_slot_axe");
+    private static final ResourceLocation EMPTY_SLOT_SWORD = ResourceLocation.withDefaultNamespace("item/empty_slot_sword");
+    private static final ResourceLocation EMPTY_SLOT_SHOVEL = ResourceLocation.withDefaultNamespace("item/empty_slot_shovel");
+    private static final ResourceLocation EMPTY_SLOT_PICKAXE = ResourceLocation.withDefaultNamespace("item/empty_slot_pickaxe");
+
+    private static final ResourceLocation EMPTY_SLOT_POPPED_CHORUS_FRUIT = ResourceLocation.fromNamespaceAndPath(
+            Everytool.MOD_ID,"item/empty_slot_popped_chorus_fruit");
+    private static final ResourceLocation EMPTY_SLOT_ECHO_SHARD = ResourceLocation.fromNamespaceAndPath(
+            Everytool.MOD_ID,"item/empty_slot_echo_shard");
+
+    private static List<ResourceLocation> createUpgradeIconList() {
+        return List.of(EMPTY_SLOT_SWORD, EMPTY_SLOT_PICKAXE, EMPTY_SLOT_AXE, EMPTY_SLOT_HOE, EMPTY_SLOT_SHOVEL);
+    }
+
+    private static List<ResourceLocation> createChorusUpgradeMaterialList() {
+        return List.of(EMPTY_SLOT_POPPED_CHORUS_FRUIT);
+    }
+    private static List<ResourceLocation> createEchoUpgradeMaterialList() {
+        return List.of(EMPTY_SLOT_ECHO_SHARD);
+    }
+
+    private static final Component CHORUS_UPGRADE_APPLIES_TO = Component.translatable(
+                    Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                            "smithing_template.chorus_upgrade.applies_to"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component CHORUS_UPGRADE_INGREDIENTS = Component.translatable(
+                    Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                            "smithing_template.chorus_upgrade.ingredients"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component CHORUS_UPGRADE = Component.translatable(Util.makeDescriptionId("upgrade",
+                    ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                            "chorus_upgrade"))).withStyle(TITLE_FORMAT);
+    private static final Component CHORUS_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(
+            Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                    "smithing_template.chorus_upgrade.base_slot_description")));
+    private static final Component CHORUS_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(
+            Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                    "smithing_template.chorus_upgrade.additions_slot_description")));
+
+    public static final RegistryObject<Item> CHORUS_UPGRADE_TEMPLATE = ITEMS.register("chorus_upgrade_smithing_template",
+            () -> new SmithingTemplateItem(
+                    CHORUS_UPGRADE_APPLIES_TO,
+                    CHORUS_UPGRADE_INGREDIENTS,
+                    CHORUS_UPGRADE,
+                    CHORUS_UPGRADE_BASE_SLOT_DESCRIPTION,
+                    CHORUS_UPGRADE_ADDITIONS_SLOT_DESCRIPTION,
+                    createUpgradeIconList(),
+                    createChorusUpgradeMaterialList()
+            ));
+
+    private static final Component ECHO_UPGRADE_APPLIES_TO = Component.translatable(
+            Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                    "smithing_template.echo_upgrade.applies_to"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component ECHO_UPGRADE_INGREDIENTS = Component.translatable(
+            Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                    "smithing_template.echo_upgrade.ingredients"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component ECHO_UPGRADE = Component.translatable(Util.makeDescriptionId("upgrade",
+            ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                    "echo_upgrade"))).withStyle(TITLE_FORMAT);
+    private static final Component ECHO_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(
+            Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                    "smithing_template.echo_upgrade.base_slot_description")));
+    private static final Component ECHO_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(
+            Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID,
+                    "smithing_template.echo_upgrade.additions_slot_description")));
+
+    public static final RegistryObject<Item> ECHO_UPGRADE_TEMPLATE = ITEMS.register("echo_upgrade_smithing_template",
+            () -> new SmithingTemplateItem(
+                    ECHO_UPGRADE_APPLIES_TO,
+                    ECHO_UPGRADE_INGREDIENTS,
+                    ECHO_UPGRADE,
+                    ECHO_UPGRADE_BASE_SLOT_DESCRIPTION,
+                    ECHO_UPGRADE_ADDITIONS_SLOT_DESCRIPTION,
+                    createUpgradeIconList(),
+                    createEchoUpgradeMaterialList()
+            ));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

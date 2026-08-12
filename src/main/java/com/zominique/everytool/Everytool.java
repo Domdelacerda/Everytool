@@ -135,6 +135,11 @@ public class Everytool
             event.accept(ModItems.CHORUS_AXE);
             event.accept(ModItems.CHORUS_HOE);
         }
+
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.CHORUS_UPGRADE_TEMPLATE);
+            event.accept(ModItems.ECHO_UPGRADE_TEMPLATE);
+        }
     }
 
     @SubscribeEvent

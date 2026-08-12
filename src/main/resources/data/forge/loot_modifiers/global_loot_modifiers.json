@@ -2,6 +2,7 @@
   "replace": false,
   "entries": [
     "everytool:coal_smelting",
-    "everytool:chorus_auto_collect"
+    "everytool:chorus_auto_collect",
+    "everytool:warden_echo_template_drop"
   ]
 }
