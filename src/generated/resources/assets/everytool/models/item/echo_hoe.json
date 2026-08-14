@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "everytool:item/echo_hoe_active",
+      "predicate": {
+        "everytool:resonating": 1.0
+      }
+    }
+  ],
   "textures": {
     "layer0": "everytool:item/echo_hoe"
   }

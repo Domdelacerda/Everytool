@@ -59,12 +59,12 @@ public class ModToolTiers {
 
     // Chorus tools automatically teleport items into your inventory when breaking blocks
     // Chorus weapons teleport mob drops into your inventory
-    public static final Tier CHORUS = new ForgeTier(2531, 9.0f, 3.5f, 17,
+    public static final Tier CHORUS = new ForgeTier(2531, 9.0f, 4.5f, 17,
             ModTags.Blocks.NEEDS_CHORUS_TOOL, () -> Ingredient.of(Items.POPPED_CHORUS_FRUIT),
             ModTags.Blocks.INCORRECT_FOR_CHORUS_TOOL);
     // Echo tools and weapons can be tuned to a specific enemy or block. When breaking a block or hitting an
     // enemy near the tuned block/mob, the tool will make a sculk sound
-    public static final Tier ECHO = new ForgeTier(3037, 10.0f, 4.0f, 22,
+    public static final Tier ECHO = new ForgeTier(3037, 10.0f, 5.0f, 22,
             ModTags.Blocks.NEEDS_ECHO_TOOL, () -> Ingredient.of(Items.ECHO_SHARD),
             ModTags.Blocks.INCORRECT_FOR_ECHO_TOOL);
 }

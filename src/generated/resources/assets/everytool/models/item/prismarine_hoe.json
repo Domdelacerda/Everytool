@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "everytool:item/prismarine_hoe_active",
+      "predicate": {
+        "everytool:submerged": 1.0
+      }
+    }
+  ],
   "textures": {
     "layer0": "everytool:item/prismarine_hoe"
   }

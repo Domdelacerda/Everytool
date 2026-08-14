@@ -48,6 +48,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldPredicateItem(item, "resonating");
     }
 
+    private void handheldPrismarineItem(Item item) {
+        handheldPredicateItem(item, "submerged");
+    }
+
     @Override
     protected void registerModels() {
         handheldCoalItem(ModItems.COAL_SWORD.get());
@@ -57,7 +61,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_SWORD.get());
         handheldItem(ModItems.AMETHYST_SWORD.get());
         handheldItem(ModItems.QUARTZ_SWORD.get());
-        handheldItem(ModItems.PRISMARINE_SWORD.get());
+        handheldPrismarineItem(ModItems.PRISMARINE_SWORD.get());
         handheldItem(ModItems.ANCIENT_SWORD.get());
         handheldEchoItem(ModItems.ECHO_SWORD.get());
         handheldItem(ModItems.CHORUS_SWORD.get());
@@ -69,7 +73,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_PICKAXE.get());
         handheldItem(ModItems.AMETHYST_PICKAXE.get());
         handheldItem(ModItems.QUARTZ_PICKAXE.get());
-        handheldItem(ModItems.PRISMARINE_PICKAXE.get());
+        handheldPrismarineItem(ModItems.PRISMARINE_PICKAXE.get());
         handheldItem(ModItems.ANCIENT_PICKAXE.get());
         handheldEchoItem(ModItems.ECHO_PICKAXE.get());
         handheldItem(ModItems.CHORUS_PICKAXE.get());
@@ -81,7 +85,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_AXE.get());
         handheldItem(ModItems.AMETHYST_AXE.get());
         handheldItem(ModItems.QUARTZ_AXE.get());
-        handheldItem(ModItems.PRISMARINE_AXE.get());
+        handheldPrismarineItem(ModItems.PRISMARINE_AXE.get());
         handheldItem(ModItems.ANCIENT_AXE.get());
         handheldEchoItem(ModItems.ECHO_AXE.get());
         handheldItem(ModItems.CHORUS_AXE.get());
@@ -93,7 +97,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_SHOVEL.get());
         handheldItem(ModItems.AMETHYST_SHOVEL.get());
         handheldItem(ModItems.QUARTZ_SHOVEL.get());
-        handheldItem(ModItems.PRISMARINE_SHOVEL.get());
+        handheldPrismarineItem(ModItems.PRISMARINE_SHOVEL.get());
         handheldItem(ModItems.ANCIENT_SHOVEL.get());
         handheldEchoItem(ModItems.ECHO_SHOVEL.get());
         handheldItem(ModItems.CHORUS_SHOVEL.get());
@@ -105,7 +109,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_HOE.get());
         handheldItem(ModItems.AMETHYST_HOE.get());
         handheldItem(ModItems.QUARTZ_HOE.get());
-        handheldItem(ModItems.PRISMARINE_HOE.get());
+        handheldPrismarineItem(ModItems.PRISMARINE_HOE.get());
         handheldItem(ModItems.ANCIENT_HOE.get());
         handheldEchoItem(ModItems.ECHO_HOE.get());
         handheldItem(ModItems.CHORUS_HOE.get());

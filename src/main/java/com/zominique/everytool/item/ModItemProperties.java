@@ -28,6 +28,12 @@ public class ModItemProperties {
             registerResonatingProperty(ModItems.ECHO_AXE.get());
             registerResonatingProperty(ModItems.ECHO_SHOVEL.get());
             registerResonatingProperty(ModItems.ECHO_HOE.get());
+
+            registerSubmergedProperty(ModItems.PRISMARINE_PICKAXE.get());
+            registerSubmergedProperty(ModItems.PRISMARINE_SWORD.get());
+            registerSubmergedProperty(ModItems.PRISMARINE_AXE.get());
+            registerSubmergedProperty(ModItems.PRISMARINE_SHOVEL.get());
+            registerSubmergedProperty(ModItems.PRISMARINE_HOE.get());
         });
     }
 
@@ -50,6 +56,14 @@ public class ModItemProperties {
                     }
                     return echoTool.isResonating(stack, level.getGameTime()) ? 1.0F : 0.0F;
                 }
+        );
+    }
+
+    private static void registerSubmergedProperty(Item item) {
+        ItemProperties.register(
+                item,
+                ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "submerged"),
+                (stack, level, entity, seed) -> entity != null && entity.isInWater() ? 1.0F : 0.0F
         );
     }
 }
