@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "everytool:item/redstone_hoe_active",
+      "predicate": {
+        "everytool:charged": 1.0
+      }
+    }
+  ],
   "textures": {
     "layer0": "everytool:item/redstone_hoe"
   }

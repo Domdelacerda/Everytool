@@ -3,6 +3,7 @@ package com.zominique.everytool;
 import com.zominique.everytool.block.ModBlocks;
 import com.zominique.everytool.component.ModDataComponentTypes;
 import com.zominique.everytool.conditions.ModLootConditions;
+import com.zominique.everytool.effect.ModEffects;
 import com.zominique.everytool.fluid.ModFluidTypes;
 import com.zominique.everytool.fluid.ModFluids;
 import com.zominique.everytool.item.ModItems;
@@ -41,6 +42,7 @@ public class Everytool
         ModDataComponentTypes.register(modEventBus);
         ModLootConditions.register(modEventBus);
         ModLootModifiers.register(modEventBus);
+        ModEffects.MOB_EFFECTS.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);

@@ -1,4 +1,4 @@
-// 1.21	2026-08-13T21:18:06.7870929	Item Models: everytool
+// 1.21	2026-08-21T07:39:57.7672001	Item Models: everytool
 0951a621f61b943518b7aa83f5d502be79997387 assets/everytool/models/item/amethyst_axe.json
 e0d7aab91b1e4f17707135a5fef4b49886d2fb01 assets/everytool/models/item/amethyst_hoe.json
 1348cb4227deffa1455f6f9713703f4813949110 assets/everytool/models/item/amethyst_pickaxe.json
@@ -66,8 +66,13 @@ afa38f90afaf01ee41979f757702a485bb045c67 assets/everytool/models/item/prismarine
 3a781b1f48605005fd4060e3f444e9474a962efe assets/everytool/models/item/quartz_pickaxe.json
 82ae55c360f9074d067cb21541629a074326e1a5 assets/everytool/models/item/quartz_shovel.json
 0381112f6333eb4da79421c725a11594da7fafce assets/everytool/models/item/quartz_sword.json
-6d4e2aae6519859adaff8930620607647497f2df assets/everytool/models/item/redstone_axe.json
-3a13ee33d2560af9feb67eb67b848b3b536a5322 assets/everytool/models/item/redstone_hoe.json
-dd7ef31d27beee3e19870004b3f4fc2e3085963f assets/everytool/models/item/redstone_pickaxe.json
-b1d8486ea740f2bdef3bfd3c55499d2e335e4d98 assets/everytool/models/item/redstone_shovel.json
-fe17a589d81d93321cdaa35bc46e9be779778ef9 assets/everytool/models/item/redstone_sword.json
+0e20cde81aa118bc43909032d00f983261e51d01 assets/everytool/models/item/redstone_axe.json
+0a6453f982376a434013a9b07059f4710b135395 assets/everytool/models/item/redstone_axe_active.json
+9ec372facb28da4f8cd68ff2b78f1eff952735dc assets/everytool/models/item/redstone_hoe.json
+fd25d17c05f4c730ee90d310d6cfa3f6c06452f2 assets/everytool/models/item/redstone_hoe_active.json
+1e02b4658f710c1df33615a093618760f05d3ece assets/everytool/models/item/redstone_pickaxe.json
+ef7f9a07a6cce5454b7d9151b07f34472d30c883 assets/everytool/models/item/redstone_pickaxe_active.json
+53e3151f5f38c63b5423b901123e0d66771cffd5 assets/everytool/models/item/redstone_shovel.json
+b4e1bd9a8c36be2c0bdf5dc0388961125eba525a assets/everytool/models/item/redstone_shovel_active.json
+c2957dfcff5ea01779bb0963e934538a669ab938 assets/everytool/models/item/redstone_sword.json
+7e0837da1d5f7855559de107eb231be7a97ea2d1 assets/everytool/models/item/redstone_sword_active.json

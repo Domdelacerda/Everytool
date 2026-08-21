@@ -24,10 +24,13 @@ public class PrismarineToolEventHandler {
     private static final ResourceLocation SPEED_BOOST_ID =
             ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "prismarine_submerged_attack_speed");
 
+    public static final float ATTACK_DAMAGE_BOOST = 3.0f;
+    public static final float ATTACK_SPEED_BOOST = 0.5f;
+
     private static final AttributeModifier DAMAGE_MODIFIER =
-            new AttributeModifier(DAMAGE_BOOST_ID, 3.0, AttributeModifier.Operation.ADD_VALUE);
+            new AttributeModifier(DAMAGE_BOOST_ID, ATTACK_DAMAGE_BOOST, AttributeModifier.Operation.ADD_VALUE);
     private static final AttributeModifier SPEED_MODIFIER =
-            new AttributeModifier(SPEED_BOOST_ID, 0.5, AttributeModifier.Operation.ADD_VALUE);
+            new AttributeModifier(SPEED_BOOST_ID, ATTACK_SPEED_BOOST, AttributeModifier.Operation.ADD_VALUE);
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {

@@ -52,11 +52,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldPredicateItem(item, "submerged");
     }
 
+    private void handheldRedstoneItem(Item item) {
+        handheldPredicateItem(item, "charged");
+    }
+
     @Override
     protected void registerModels() {
         handheldCoalItem(ModItems.COAL_SWORD.get());
         handheldItem(ModItems.FLINT_SWORD.get());
-        handheldItem(ModItems.REDSTONE_SWORD.get());
+        handheldRedstoneItem(ModItems.REDSTONE_SWORD.get());
         handheldItem(ModItems.LAPIS_SWORD.get());
         handheldItem(ModItems.EMERALD_SWORD.get());
         handheldItem(ModItems.AMETHYST_SWORD.get());
@@ -68,7 +72,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         handheldCoalItem(ModItems.COAL_PICKAXE.get());
         handheldItem(ModItems.FLINT_PICKAXE.get());
-        handheldItem(ModItems.REDSTONE_PICKAXE.get());
+        handheldRedstoneItem(ModItems.REDSTONE_PICKAXE.get());
         handheldItem(ModItems.LAPIS_PICKAXE.get());
         handheldItem(ModItems.EMERALD_PICKAXE.get());
         handheldItem(ModItems.AMETHYST_PICKAXE.get());
@@ -80,7 +84,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         handheldCoalItem(ModItems.COAL_AXE.get());
         handheldItem(ModItems.FLINT_AXE.get());
-        handheldItem(ModItems.REDSTONE_AXE.get());
+        handheldRedstoneItem(ModItems.REDSTONE_AXE.get());
         handheldItem(ModItems.LAPIS_AXE.get());
         handheldItem(ModItems.EMERALD_AXE.get());
         handheldItem(ModItems.AMETHYST_AXE.get());
@@ -92,7 +96,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         handheldCoalItem(ModItems.COAL_SHOVEL.get());
         handheldItem(ModItems.FLINT_SHOVEL.get());
-        handheldItem(ModItems.REDSTONE_SHOVEL.get());
+        handheldRedstoneItem(ModItems.REDSTONE_SHOVEL.get());
         handheldItem(ModItems.LAPIS_SHOVEL.get());
         handheldItem(ModItems.EMERALD_SHOVEL.get());
         handheldItem(ModItems.AMETHYST_SHOVEL.get());
@@ -104,7 +108,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         handheldCoalItem(ModItems.COAL_HOE.get());
         handheldItem(ModItems.FLINT_HOE.get());
-        handheldItem(ModItems.REDSTONE_HOE.get());
+        handheldRedstoneItem(ModItems.REDSTONE_HOE.get());
         handheldItem(ModItems.LAPIS_HOE.get());
         handheldItem(ModItems.EMERALD_HOE.get());
         handheldItem(ModItems.AMETHYST_HOE.get());

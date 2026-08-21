@@ -7,6 +7,7 @@ import com.zominique.everytool.item.custom.echo.*;
 import com.zominique.everytool.item.custom.emerald.*;
 import com.zominique.everytool.item.custom.lapis.*;
 import com.zominique.everytool.item.custom.prismarine.*;
+import com.zominique.everytool.item.custom.redstone.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.network.chat.Component;
@@ -30,7 +31,7 @@ public class ModItems {
             () -> new SwordItem(ModToolTiers.FLINT, new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.FLINT, 3, -2.2f))));
     public static final RegistryObject<Item> REDSTONE_SWORD = ITEMS.register("redstone_sword",
-            () -> new SwordItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(SwordItem.createAttributes(
+            () -> new RedstoneSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.REDSTONE, 3, -2.4f))));
     public static final RegistryObject<Item> LAPIS_SWORD = ITEMS.register("lapis_sword",
             () -> new LapisSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
@@ -64,7 +65,7 @@ public class ModItems {
             () -> new PickaxeItem(ModToolTiers.FLINT, new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.FLINT, 1, -2.6f))));
     public static final RegistryObject<Item> REDSTONE_PICKAXE = ITEMS.register("redstone_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(PickaxeItem.createAttributes(
+            () -> new RedstonePickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.REDSTONE, 1, -2.8f))));
     public static final RegistryObject<Item> LAPIS_PICKAXE = ITEMS.register("lapis_pickaxe",
             () -> new LapisPickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
@@ -98,7 +99,7 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.FLINT, new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.FLINT, 6, -3.0f))));
     public static final RegistryObject<Item> REDSTONE_AXE = ITEMS.register("redstone_axe",
-            () -> new AxeItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(AxeItem.createAttributes(
+            () -> new RedstoneAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.REDSTONE, 6, -3.1f))));
     public static final RegistryObject<Item> LAPIS_AXE = ITEMS.register("lapis_axe",
             () -> new LapisAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
@@ -132,7 +133,7 @@ public class ModItems {
             () -> new ShovelItem(ModToolTiers.FLINT, new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.FLINT, 2, -2.8f))));
     public static final RegistryObject<Item> REDSTONE_SHOVEL = ITEMS.register("redstone_shovel",
-            () -> new ShovelItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(ShovelItem.createAttributes(
+            () -> new RedstoneShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.REDSTONE, 2, -3.0f))));
     public static final RegistryObject<Item> LAPIS_SHOVEL = ITEMS.register("lapis_shovel",
             () -> new LapisShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
@@ -166,7 +167,7 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.FLINT, new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.FLINT, 0, -1.8f))));
     public static final RegistryObject<Item> REDSTONE_HOE = ITEMS.register("redstone_hoe",
-            () -> new HoeItem(ModToolTiers.REDSTONE, new Item.Properties().attributes(HoeItem.createAttributes(
+            () -> new RedstoneHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.REDSTONE, 0, -1.0f))));
     public static final RegistryObject<Item> LAPIS_HOE = ITEMS.register("lapis_hoe",
             () -> new LapisHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(

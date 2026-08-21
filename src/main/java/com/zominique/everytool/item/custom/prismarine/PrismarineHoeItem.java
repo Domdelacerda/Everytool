@@ -1,24 +1,28 @@
 package com.zominique.everytool.item.custom.prismarine;
 
-import com.zominique.everytool.Everytool;
 import com.zominique.everytool.item.ModToolTiers;
+import com.zominique.everytool.item.ModToolAttributes;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 
-import static com.zominique.everytool.item.custom.prismarine.PrismarineToolAttributes.MINING_SPEED_BOOST;
-import static com.zominique.everytool.item.custom.prismarine.PrismarineToolAttributes.SUBMERGED_MINING_ID;
+import java.util.List;
+
+import static com.zominique.everytool.item.ModToolAttributes.*;
 
 public class PrismarineHoeItem extends HoeItem implements IPrismarineTool {
     public PrismarineHoeItem(Item.Properties properties) {
         super(ModToolTiers.PRISMARINE, properties.component(
                 DataComponents.ATTRIBUTE_MODIFIERS,
-                PrismarineToolAttributes.toolBase(ModToolTiers.PRISMARINE, 0.0F, -4.0F)
+                ModToolAttributes.hideDefaultTooltip(ModToolAttributes.toolBase(ModToolTiers.PRISMARINE,
+                                HOE_BASE_DAMAGE, HOE_BASE_ATTACK_SPEED_MODIFIER)
                         .add(
                                 Attributes.SUBMERGED_MINING_SPEED,
                                 new AttributeModifier(SUBMERGED_MINING_ID,
@@ -26,6 +30,21 @@ public class PrismarineHoeItem extends HoeItem implements IPrismarineTool {
                                 EquipmentSlotGroup.MAINHAND
                         )
                         .build()
-        ));
+        )));
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        double baseDamage = ModToolAttributes.HOE_BASE_DAMAGE + ModToolTiers.PRISMARINE.getAttackDamageBonus();
+        double baseSpeed = ModToolAttributes.effectiveAttackSpeed(ModToolAttributes.HOE_BASE_ATTACK_SPEED_MODIFIER);
+        appendMainHandTooltip(tooltip, baseDamage, baseSpeed);
+
+        // Also re-added by hand — showInTooltip=false above suppresses the
+        // WHOLE attribute set's auto-rendering, not just attack damage/speed,
+        // so the submerged mining speed line would otherwise vanish too.
+        tooltip.add(Component.translatable("item.everytool.prismarine.submerged_mining", "+1.3")
+                .withStyle(ChatFormatting.BLUE));
+
+        super.appendHoverText(stack, context, tooltip, flag);
     }
 }

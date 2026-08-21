@@ -1,25 +1,29 @@
-package com.zominique.everytool.item.custom.prismarine;
+package com.zominique.everytool.item.custom.redstone;
 
 import com.zominique.everytool.event.custom.PrismarineToolEventHandler;
+import com.zominique.everytool.event.custom.RedstoneToolEventHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public interface IPrismarineTool {
+public interface IRedstoneTool {
     default void appendMainHandTooltip(List<Component> tooltip, double baseAttackDamage, double baseAttackSpeed) {
         tooltip.add(Component.translatable("item.modifiers.mainhand").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("item.everytool.prismarine.base_damage",
+        tooltip.add(Component.translatable("item.everytool.redstone.base_damage",
                         formatNumber(baseAttackDamage))
                 .withStyle(ChatFormatting.DARK_GREEN));
-        tooltip.add(Component.translatable("item.everytool.prismarine.base_speed",
+        tooltip.add(Component.translatable("item.everytool.redstone.base_speed",
                         formatNumber(baseAttackSpeed))
                 .withStyle(ChatFormatting.DARK_GREEN));
-        tooltip.add(Component.translatable("item.everytool.prismarine.submerged_damage",
-                        formatSigned(PrismarineToolEventHandler.ATTACK_DAMAGE_BOOST))
+        tooltip.add(Component.translatable("item.everytool.redstone.charged_damage",
+                        formatSigned(RedstoneToolEventHandler.ATTACK_DAMAGE_BOOST))
                 .withStyle(ChatFormatting.BLUE));
-        tooltip.add(Component.translatable("item.everytool.prismarine.submerged_speed",
-                        formatSigned(PrismarineToolEventHandler.ATTACK_SPEED_BOOST))
+        tooltip.add(Component.translatable("item.everytool.redstone.charged_speed",
+                        formatSigned(RedstoneToolEventHandler.ATTACK_SPEED_BOOST))
+                .withStyle(ChatFormatting.BLUE));
+        tooltip.add(Component.translatable("item.everytool.redstone.charged_efficiency",
+                        formatSigned(RedstoneToolEventHandler.ATTACK_SPEED_BOOST))
                 .withStyle(ChatFormatting.BLUE));
     }
 

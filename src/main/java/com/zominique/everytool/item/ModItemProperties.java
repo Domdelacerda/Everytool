@@ -1,6 +1,7 @@
 package com.zominique.everytool.item;
 
 import com.zominique.everytool.Everytool;
+import com.zominique.everytool.effect.ModEffects;
 import com.zominique.everytool.item.custom.coal.ICoalTool;
 import com.zominique.everytool.item.custom.echo.IEchoTool;
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +35,12 @@ public class ModItemProperties {
             registerSubmergedProperty(ModItems.PRISMARINE_AXE.get());
             registerSubmergedProperty(ModItems.PRISMARINE_SHOVEL.get());
             registerSubmergedProperty(ModItems.PRISMARINE_HOE.get());
+
+            registerChargedProperty(ModItems.REDSTONE_PICKAXE.get());
+            registerChargedProperty(ModItems.REDSTONE_SWORD.get());
+            registerChargedProperty(ModItems.REDSTONE_AXE.get());
+            registerChargedProperty(ModItems.REDSTONE_SHOVEL.get());
+            registerChargedProperty(ModItems.REDSTONE_HOE.get());
         });
     }
 
@@ -64,6 +71,15 @@ public class ModItemProperties {
                 item,
                 ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "submerged"),
                 (stack, level, entity, seed) -> entity != null && entity.isInWater() ? 1.0F : 0.0F
+        );
+    }
+
+    private static void registerChargedProperty(Item item) {
+        ItemProperties.register(
+                item,
+                ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "charged"),
+                (stack, level, entity, seed) -> entity != null
+                        && entity.hasEffect(ModEffects.CHARGED.getHolder().get()) ? 1.0F : 0.0F
         );
     }
 }
