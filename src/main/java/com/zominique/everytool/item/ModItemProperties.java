@@ -70,7 +70,7 @@ public class ModItemProperties {
         ItemProperties.register(
                 item,
                 ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "submerged"),
-                (stack, level, entity, seed) -> entity != null && entity.isInWater() ? 1.0F : 0.0F
+                (stack, level, entity, seed) -> entity != null && entity.isInWaterOrRain() ? 1.0F : 0.0F
         );
     }
 

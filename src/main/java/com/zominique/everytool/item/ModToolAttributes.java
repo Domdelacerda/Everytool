@@ -26,10 +26,6 @@ public class ModToolAttributes {
     public static final float SHOVEL_BASE_ATTACK_SPEED_MODIFIER = -3.0F;
     public static final float AXE_BASE_ATTACK_SPEED_MODIFIER = -3.0F;
 
-    public static final float MINING_SPEED_BOOST = 1.3f;
-    public static final ResourceLocation SUBMERGED_MINING_ID =
-            ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "prismarine_submerged_mining");
-
     public static double effectiveAttackSpeed(float baseAttackSpeedModifier) {
         return DEFAULT_ATTACK_SPEED_BASE + baseAttackSpeedModifier;
     }
