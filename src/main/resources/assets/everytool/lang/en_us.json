@@ -71,11 +71,12 @@
   "item.everytool.prismarine.base_speed": "%s Attack Speed",
   "item.everytool.prismarine.submerged_damage": "%s Underwater Attack Damage",
   "item.everytool.prismarine.submerged_speed": "%s Underwater Attack Speed",
+  "item.everytool.prismarine.submerged_efficiency": "%s Underwater Mining Efficiency",
   "item.everytool.prismarine.submerged_mining": "%s Underwater Mining Speed",
   "effect.everytool.charged": "Charged",
   "item.everytool.redstone.base_damage": "%s Attack Damage",
   "item.everytool.redstone.base_speed": "%s Attack Speed",
   "item.everytool.redstone.charged_damage": "%s Charged Attack Damage",
   "item.everytool.redstone.charged_speed": "%s Charged Attack Speed",
-  "item.everytool.redstone.charged_efficiency": "%s Charged Efficiency"
+  "item.everytool.redstone.charged_efficiency": "%s Charged Mining Efficiency"
 }

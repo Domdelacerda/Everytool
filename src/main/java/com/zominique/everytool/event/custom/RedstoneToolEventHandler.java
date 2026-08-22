@@ -25,7 +25,7 @@ public class RedstoneToolEventHandler {
 
     public static final float ATTACK_DAMAGE_BOOST = 3.0f;
     public static final float ATTACK_SPEED_BOOST = 0.5f;
-    public static final float MINING_EFFICIENCY_BOOST = 2.0f;
+    public static final float MINING_EFFICIENCY_BOOST = 5.0f;
 
     public static final AttributeModifier DAMAGE_MODIFIER =
             new AttributeModifier(DAMAGE_BOOST_ID, ATTACK_DAMAGE_BOOST, AttributeModifier.Operation.ADD_VALUE);

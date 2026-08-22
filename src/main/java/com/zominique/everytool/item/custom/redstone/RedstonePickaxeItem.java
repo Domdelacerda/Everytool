@@ -21,7 +21,7 @@ public class RedstonePickaxeItem extends PickaxeItem implements IRedstoneTool {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        double baseDamage = ModToolAttributes.PICKAXE_BASE_DAMAGE + ModToolTiers.REDSTONE.getAttackDamageBonus();
+        int baseDamage = (int) (ModToolAttributes.PICKAXE_BASE_DAMAGE + ModToolTiers.REDSTONE.getAttackDamageBonus() + 1);
         double baseSpeed = ModToolAttributes.effectiveAttackSpeed(ModToolAttributes.PICKAXE_BASE_ATTACK_SPEED_MODIFIER);
         appendMainHandTooltip(tooltip, baseDamage, baseSpeed);
         super.appendHoverText(stack, context, tooltip, flag);

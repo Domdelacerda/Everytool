@@ -23,7 +23,7 @@ public class RedstoneAxeItem extends AxeItem implements IRedstoneTool {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        double baseDamage = BASE_DAMAGE + ModToolTiers.REDSTONE.getAttackDamageBonus();
+        int baseDamage = (int) (BASE_DAMAGE + ModToolTiers.REDSTONE.getAttackDamageBonus() + 1);
         double baseSpeed = ModToolAttributes.effectiveAttackSpeed(ModToolAttributes.AXE_BASE_ATTACK_SPEED_MODIFIER);
         appendMainHandTooltip(tooltip, baseDamage, baseSpeed);
         super.appendHoverText(stack, context, tooltip, flag);

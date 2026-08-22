@@ -21,7 +21,7 @@ public class RedstoneShovelItem extends ShovelItem implements IRedstoneTool {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        double baseDamage = ModToolAttributes.SHOVEL_BASE_DAMAGE + ModToolTiers.REDSTONE.getAttackDamageBonus();
+        int baseDamage = (int) (ModToolAttributes.SHOVEL_BASE_DAMAGE + ModToolTiers.REDSTONE.getAttackDamageBonus() + 1);
         double baseSpeed = ModToolAttributes.effectiveAttackSpeed(ModToolAttributes.SHOVEL_BASE_ATTACK_SPEED_MODIFIER);
         appendMainHandTooltip(tooltip, baseDamage, baseSpeed);
         super.appendHoverText(stack, context, tooltip, flag);

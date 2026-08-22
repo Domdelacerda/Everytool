@@ -25,7 +25,7 @@ public class RedstoneHoeItem extends HoeItem implements IRedstoneTool {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        double baseDamage = HOE_BASE_DAMAGE + ModToolTiers.REDSTONE.getAttackDamageBonus();
+        int baseDamage = (int) (HOE_BASE_DAMAGE + ModToolTiers.REDSTONE.getAttackDamageBonus() + 1);
         double baseSpeed = ModToolAttributes.effectiveAttackSpeed(HOE_BASE_ATTACK_SPEED_MODIFIER);
         appendMainHandTooltip(tooltip, baseDamage, baseSpeed);
         super.appendHoverText(stack, context, tooltip, flag);

@@ -37,7 +37,7 @@ public class PrismarineAxeItem extends AxeItem implements IPrismarineTool {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        double baseDamage = BASE_DAMAGE + ModToolTiers.PRISMARINE.getAttackDamageBonus();
+        int baseDamage = (int) (BASE_DAMAGE + ModToolTiers.PRISMARINE.getAttackDamageBonus() + 1);
         double baseSpeed = ModToolAttributes.effectiveAttackSpeed(ModToolAttributes.AXE_BASE_ATTACK_SPEED_MODIFIER);
         appendMainHandTooltip(tooltip, baseDamage, baseSpeed);
 

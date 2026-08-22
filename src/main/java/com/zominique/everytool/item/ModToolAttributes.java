@@ -40,16 +40,16 @@ public class ModToolAttributes {
 
     public static ItemAttributeModifiers.Builder toolBase(Tier tier, float baseDamage, float baseAttackSpeed) {
         return ItemAttributeModifiers.builder()
-                .add(
-                        Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID, baseDamage + tier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
-                        EquipmentSlotGroup.MAINHAND
-                )
-                .add(
-                        Attributes.ATTACK_SPEED,
-                        new AttributeModifier(BASE_ATTACK_SPEED_ID, baseAttackSpeed, AttributeModifier.Operation.ADD_VALUE),
-                        EquipmentSlotGroup.MAINHAND
-                );
+            .add(
+                Attributes.ATTACK_DAMAGE,
+                new AttributeModifier(BASE_ATTACK_DAMAGE_ID, baseDamage + tier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
+                EquipmentSlotGroup.MAINHAND
+            )
+            .add(
+                Attributes.ATTACK_SPEED,
+                new AttributeModifier(BASE_ATTACK_SPEED_ID, baseAttackSpeed, AttributeModifier.Operation.ADD_VALUE),
+                EquipmentSlotGroup.MAINHAND
+            );
     }
 
     public static ItemAttributeModifiers.Builder sword(Tier tier) {

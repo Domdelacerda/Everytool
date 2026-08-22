@@ -34,7 +34,7 @@ public class PrismarineSwordItem extends SwordItem implements IPrismarineTool {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        double baseDamage = ModToolAttributes.SWORD_BASE_DAMAGE + ModToolTiers.PRISMARINE.getAttackDamageBonus();
+        int baseDamage = (int) (ModToolAttributes.SWORD_BASE_DAMAGE + ModToolTiers.PRISMARINE.getAttackDamageBonus() + 1);
         double baseSpeed = ModToolAttributes.effectiveAttackSpeed(ModToolAttributes.SWORD_BASE_ATTACK_SPEED_MODIFIER);
         appendMainHandTooltip(tooltip, baseDamage, baseSpeed);
 
@@ -44,6 +44,5 @@ public class PrismarineSwordItem extends SwordItem implements IPrismarineTool {
         tooltip.add(Component.translatable("item.everytool.prismarine.submerged_mining", "+1.3")
                 .withStyle(ChatFormatting.BLUE));
 
-        super.appendHoverText(stack, context, tooltip, flag);
-    }
+        super.appendHoverText(stack, context, tooltip, flag); }
 }
