@@ -6,6 +6,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -13,6 +17,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -79,6 +84,28 @@ public class EmeraldToolEventHandler {
 
         if (creative) {
             offhand.setCount(originalCount);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onAttackEntity(AttackEntityEvent event) {
+        Player player = event.getEntity();
+        ItemStack stack = player.getMainHandItem();
+
+        if (stack.getItem() instanceof IEmeraldTool && player.isShiftKeyDown()) {
+            Entity target = event.getTarget();
+            ItemStack enemyStack = SlotAccess.forEquipmentSlot((LivingEntity)target, EquipmentSlot.MAINHAND).get();
+            if (enemyStack != ItemStack.EMPTY) {
+                SlotAccess.forEquipmentSlot((LivingEntity)target, EquipmentSlot.MAINHAND).set(stack);
+                SlotAccess.forEquipmentSlot(player, EquipmentSlot.MAINHAND).set(enemyStack);
+            }
+            else {
+                enemyStack = SlotAccess.forEquipmentSlot((LivingEntity)target, EquipmentSlot.OFFHAND).get();
+                if (enemyStack != ItemStack.EMPTY) {
+                    SlotAccess.forEquipmentSlot((LivingEntity)target, EquipmentSlot.OFFHAND).set(stack);
+                    SlotAccess.forEquipmentSlot(player, EquipmentSlot.MAINHAND).set(enemyStack);
+                }
+            }
         }
     }
 }

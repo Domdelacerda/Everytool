@@ -42,7 +42,7 @@ public class ChargedEffectHandler {
         }
 
         int newDuration = Math.min(currentDuration + 2, MAX_CHARGE_TICKS);
-        entity.forceAddEffect(
+        entity.addEffect(
                 new MobEffectInstance(ModEffects.CHARGED.getHolder().get(), newDuration, amplifier, false, true, true),
                 null
         );

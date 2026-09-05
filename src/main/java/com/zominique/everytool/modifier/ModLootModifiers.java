@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import com.zominique.everytool.Everytool;
 import com.zominique.everytool.modifier.custom.ChorusAutoCollectModifier;
 import com.zominique.everytool.modifier.custom.CoalSmeltingModifier;
+import com.zominique.everytool.modifier.custom.AncientUncraftingModifier;
 import com.zominique.everytool.modifier.custom.WardenEchoTemplateDropModifier;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,6 +23,8 @@ public class ModLootModifiers {
             LOOT_MODIFIER_SERIALIZERS.register("chorus_auto_collect", () -> ChorusAutoCollectModifier.CODEC);
     public static final RegistryObject<MapCodec<WardenEchoTemplateDropModifier>> WARDEN_ECHO_TEMPLATE_DROP =
             LOOT_MODIFIER_SERIALIZERS.register("warden_echo_template_drop", () -> WardenEchoTemplateDropModifier.CODEC);
+    public static final RegistryObject<MapCodec<AncientUncraftingModifier>> ANCIENT_UNCRAFTING =
+            LOOT_MODIFIER_SERIALIZERS.register("ancient_uncrafting", () -> AncientUncraftingModifier.CODEC);
 
     public static void register(IEventBus eventBus) {
         LOOT_MODIFIER_SERIALIZERS.register(eventBus);

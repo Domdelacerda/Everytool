@@ -73,6 +73,7 @@
   "item.everytool.prismarine.submerged_speed": "%s Underwater Attack Speed",
   "item.everytool.prismarine.submerged_efficiency": "%s Underwater Mining Efficiency",
   "effect.everytool.charged": "Charged",
+  "effect.everytool.corrosion": "Corrosion",
   "item.everytool.redstone.base_damage": "%s Attack Damage",
   "item.everytool.redstone.base_speed": "%s Attack Speed",
   "item.everytool.redstone.charged_damage": "%s Charged Attack Damage",

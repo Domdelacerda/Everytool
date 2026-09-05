@@ -1,6 +1,7 @@
 package com.zominique.everytool.item;
 
 import com.zominique.everytool.Everytool;
+import com.zominique.everytool.item.custom.ancient.*;
 import com.zominique.everytool.item.custom.chorus.*;
 import com.zominique.everytool.item.custom.coal.*;
 import com.zominique.everytool.item.custom.echo.*;
@@ -10,6 +11,7 @@ import com.zominique.everytool.item.custom.prismarine.*;
 import com.zominique.everytool.item.custom.redstone.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
+import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
@@ -49,8 +51,8 @@ public class ModItems {
             () -> new PrismarineSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.PRISMARINE, 3, -2.4f))));
     public static final RegistryObject<Item> ANCIENT_SWORD = ITEMS.register("ancient_sword",
-            () -> new SwordItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(SwordItem.createAttributes(
-                    ModToolTiers.ANCIENT, 4, -3.4f))));
+            () -> new AncientSwordItem(new Item.Properties().fireResistant().attributes(SwordItem.createAttributes(
+                    ModToolTiers.ANCIENT, 3, -2.6f))));
     public static final RegistryObject<Item> ECHO_SWORD = ITEMS.register("echo_sword",
             () -> new EchoSwordItem(new Item.Properties().fireResistant().attributes(SwordItem.createAttributes(
                     ModToolTiers.ECHO, 3, -2.4f))));
@@ -83,8 +85,8 @@ public class ModItems {
             () -> new PrismarinePickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.PRISMARINE, 1, -2.8f))));
     public static final RegistryObject<Item> ANCIENT_PICKAXE = ITEMS.register("ancient_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(PickaxeItem.createAttributes(
-                    ModToolTiers.ANCIENT, 2, -3.8f))));
+            () -> new AncientPickaxeItem(new Item.Properties().fireResistant().attributes(PickaxeItem.createAttributes(
+                    ModToolTiers.ANCIENT, 1, -3.0f))));
     public static final RegistryObject<Item> ECHO_PICKAXE = ITEMS.register("echo_pickaxe",
             () -> new EchoPickaxeItem(new Item.Properties().fireResistant().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.ECHO, 1, -2.8f))));
@@ -117,8 +119,8 @@ public class ModItems {
             () -> new PrismarineAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.PRISMARINE, 6, -3.1f))));
     public static final RegistryObject<Item> ANCIENT_AXE = ITEMS.register("ancient_axe",
-            () -> new AxeItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(
-                    ModToolTiers.ANCIENT, 6, -3.8f))));
+            () -> new AncientAxeItem(new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(
+                    ModToolTiers.ANCIENT, 5, -3.3f))));
     public static final RegistryObject<Item> ECHO_AXE = ITEMS.register("echo_axe",
             () -> new EchoAxeItem(new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(
                     ModToolTiers.ECHO, 5, -3.0f))));
@@ -151,8 +153,8 @@ public class ModItems {
             () -> new PrismarineShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.PRISMARINE, 2, -3.0f))));
     public static final RegistryObject<Item> ANCIENT_SHOVEL = ITEMS.register("ancient_shovel",
-            () -> new ShovelItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(ShovelItem.createAttributes(
-                    ModToolTiers.ANCIENT, 3, -3.8f))));
+            () -> new AncientShovelItem(new Item.Properties().fireResistant().attributes(ShovelItem.createAttributes(
+                    ModToolTiers.ANCIENT, 2, -3.2f))));
     public static final RegistryObject<Item> ECHO_SHOVEL = ITEMS.register("echo_shovel",
             () -> new EchoShovelItem(new Item.Properties().fireResistant().attributes(ShovelItem.createAttributes(
                     ModToolTiers.ECHO, 2, -3.0f))));
@@ -185,8 +187,8 @@ public class ModItems {
             () -> new PrismarineHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.PRISMARINE, 0, -1.0f))));
     public static final RegistryObject<Item> ANCIENT_HOE = ITEMS.register("ancient_hoe",
-            () -> new HoeItem(ModToolTiers.ANCIENT, new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
-                    ModToolTiers.ANCIENT, 0, -1.0f))));
+            () -> new AncientHoeItem(new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
+                    ModToolTiers.ANCIENT, 0, -1.2f))));
     public static final RegistryObject<Item> ECHO_HOE = ITEMS.register("echo_hoe",
             () -> new EchoHoeItem(new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
                     ModToolTiers.ECHO, 1, -0.0f))));

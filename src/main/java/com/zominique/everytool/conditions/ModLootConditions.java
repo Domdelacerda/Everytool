@@ -1,6 +1,7 @@
 package com.zominique.everytool.conditions;
 
 import com.zominique.everytool.Everytool;
+import com.zominique.everytool.conditions.custom.AncientToolScrapCondition;
 import com.zominique.everytool.conditions.custom.ChorusToolAutoCollectCondition;
 import com.zominique.everytool.conditions.custom.CoalToolLitCondition;
 import com.zominique.everytool.conditions.custom.IsWardenCondition;
@@ -24,6 +25,9 @@ public class ModLootConditions {
     public static final RegistryObject<LootItemConditionType> IS_WARDEN =
             LOOT_CONDITIONS.register("is_warden",
                     () -> new LootItemConditionType(IsWardenCondition.CODEC));
+    public static final RegistryObject<LootItemConditionType> ANCIENT_TOOL =
+            LOOT_CONDITIONS.register("ancient_tool",
+                    () -> new LootItemConditionType(AncientToolScrapCondition.CODEC));
 
     public static void register(IEventBus eventBus) {
         LOOT_CONDITIONS.register(eventBus);

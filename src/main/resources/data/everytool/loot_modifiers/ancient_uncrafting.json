@@ -1,0 +1,8 @@
+{
+  "type": "everytool:ancient_uncrafting",
+  "conditions": [
+    {
+      "condition": "everytool:ancient_tool"
+    }
+  ]
+}
