@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:end/respawn_dragon",
+  "display": {
+    "icon": {
+      "id": "everytool:chorus_upgrade_smithing_template"
+    },
+    "title": {
+      "text": "After Forever"
+    },
+    "description": {
+      "text": "Defeat the Ender Dragon rematch and obtain a Chorus Upgrade Template"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "upgrade": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "everytool:chorus_upgrade_smithing_template"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:adventure/avoid_vibration",
+  "display": {
+    "icon": {
+      "id": "everytool:echo_upgrade_smithing_template"
+    },
+    "title": {
+      "text": "The Sound of Silence"
+    },
+    "description": {
+      "text": "Defeat the Warden and obtain an Echo Upgrade Template"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "upgrade": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "everytool:echo_upgrade_smithing_template"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
