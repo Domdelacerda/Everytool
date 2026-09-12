@@ -3,6 +3,8 @@ package com.zominique.everytool.mixin;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ItemStack;
 import com.zominique.everytool.Everytool;
 import com.zominique.everytool.effect.ModEffects;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -33,8 +35,10 @@ public class ArmorDisplayMixin {
         int amplifier = corrosion.getAmplifier();
         int corrosionPoints = CORROSION_ASMOR_REDUCTION * (amplifier + 1);
 
-        int pristineArmor = pPlayer.getArmorValue();
-        int totalArmor = pristineArmor + Math.min(pristineArmor, corrosionPoints);
+        int currentArmor = pPlayer.getArmorValue();
+        int equippedArmor = getEquippedArmorValue(pPlayer);
+        int corrodedArmor = Math.min(corrosionPoints, equippedArmor);
+        int totalArmor = currentArmor + corrodedArmor;
         if (totalArmor == 0) return;
         totalArmor = Math.min(totalArmor, MAX_ARMOR_POINTS);
 
@@ -43,14 +47,20 @@ public class ArmorDisplayMixin {
         ResourceLocation corrodedFull = ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "textures/gui/sprites/hud/armor_corroded.png");
         ResourceLocation corrodedHalf = ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "textures/gui/sprites/hud/armor_half_corroded_half_empty.png");
         ResourceLocation pristineHalf = ResourceLocation.fromNamespaceAndPath(Everytool.MOD_ID, "textures/gui/sprites/hud/armor_half_pristine_half_corroded.png");
+        ResourceLocation emptyArmor = ResourceLocation.fromNamespaceAndPath("minecraft", "textures/gui/sprites/hud/armor_empty.png");
 
         RenderSystem.enableBlend();
         for (int iconIndex = 0; iconIndex < ARMOR_ICONS; iconIndex++) {
             int xPos = pX + iconIndex * (ARMOR_ICON_SIZE - 1);
             int iconValue = iconIndex * 2 + 1;
 
-            if (iconValue >= pristineArmor && iconValue <= totalArmor) {
-                if (iconValue == pristineArmor && (totalArmor % 2 == 1)) {
+            if (currentArmor == 0) {
+                pGuiGraphics.blit(emptyArmor, xPos, yPos, 0, 0,
+                        ARMOR_ICON_SIZE, ARMOR_ICON_SIZE, ARMOR_ICON_SIZE, ARMOR_ICON_SIZE);
+            }
+
+            if (iconValue >= currentArmor && iconValue <= totalArmor) {
+                if (iconValue == currentArmor && (totalArmor % 2 == 1)) {
                     pGuiGraphics.blit(pristineHalf, xPos, yPos, 0, 0,
                             ARMOR_ICON_SIZE, ARMOR_ICON_SIZE, ARMOR_ICON_SIZE, ARMOR_ICON_SIZE);
                 } else if (iconValue == totalArmor && (totalArmor % 2 == 1)) {
@@ -63,5 +73,15 @@ public class ArmorDisplayMixin {
             }
         }
         RenderSystem.disableBlend();
+    }
+
+    private static int getEquippedArmorValue(Player player) {
+        int armorValue = 0;
+        for (ItemStack armorStack : player.getArmorSlots()) {
+            if (armorStack.getItem() instanceof ArmorItem armorItem) {
+                armorValue += armorItem.getDefense();
+            }
+        }
+        return armorValue;
     }
 }
