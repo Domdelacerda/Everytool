@@ -20,7 +20,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-
+        ModelFile amethystGlassModel = models()
+                .cubeAll("amethyst_glass", modLoc("block/amethyst_glass"))
+                .renderType("minecraft:translucent");
+        simpleBlock(ModBlocks.AMETHYST_GLASS.get(), amethystGlassModel);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

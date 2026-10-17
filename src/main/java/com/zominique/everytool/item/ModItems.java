@@ -1,6 +1,7 @@
 package com.zominique.everytool.item;
 
 import com.zominique.everytool.Everytool;
+import com.zominique.everytool.item.custom.amethyst.*;
 import com.zominique.everytool.item.custom.ancient.*;
 import com.zominique.everytool.item.custom.chorus.*;
 import com.zominique.everytool.item.custom.coal.*;
@@ -12,7 +13,6 @@ import com.zominique.everytool.item.custom.prismarine.*;
 import com.zominique.everytool.item.custom.redstone.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
-import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
@@ -43,7 +43,7 @@ public class ModItems {
             () -> new EmeraldSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.EMERALD, 3, -2.4f))));
     public static final RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword",
-            () -> new SwordItem(ModToolTiers.AMETHYST, new Item.Properties().attributes(SwordItem.createAttributes(
+            () -> new AmethystSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.AMETHYST, 3, -2.0f))));
     public static final RegistryObject<Item> QUARTZ_SWORD = ITEMS.register("quartz_sword",
             () -> new SwordItem(ModToolTiers.QUARTZ, new Item.Properties().attributes(SwordItem.createAttributes(
@@ -77,7 +77,7 @@ public class ModItems {
             () -> new EmeraldPickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.EMERALD, 1, -2.8f))));
     public static final RegistryObject<Item> AMETHYST_PICKAXE = ITEMS.register("amethyst_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.AMETHYST, new Item.Properties().attributes(PickaxeItem.createAttributes(
+            () -> new AmethystPickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.AMETHYST, 1, -2.4f))));
     public static final RegistryObject<Item> QUARTZ_PICKAXE = ITEMS.register("quartz_pickaxe",
             () -> new PickaxeItem(ModToolTiers.QUARTZ, new Item.Properties().attributes(PickaxeItem.createAttributes(
@@ -111,7 +111,7 @@ public class ModItems {
             () -> new EmeraldAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.EMERALD, 6, -3.1f))));
     public static final RegistryObject<Item> AMETHYST_AXE = ITEMS.register("amethyst_axe",
-            () -> new AxeItem(ModToolTiers.AMETHYST, new Item.Properties().attributes(AxeItem.createAttributes(
+            () -> new AmethystAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.AMETHYST, 6, -2.7f))));
     public static final RegistryObject<Item> QUARTZ_AXE = ITEMS.register("quartz_axe",
             () -> new AxeItem(ModToolTiers.QUARTZ, new Item.Properties().attributes(AxeItem.createAttributes(
@@ -145,7 +145,7 @@ public class ModItems {
             () -> new EmeraldShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.EMERALD, 2, -3.0f))));
     public static final RegistryObject<Item> AMETHYST_SHOVEL = ITEMS.register("amethyst_shovel",
-            () -> new ShovelItem(ModToolTiers.AMETHYST, new Item.Properties().attributes(ShovelItem.createAttributes(
+            () -> new AmethystShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.AMETHYST, 2, -2.6f))));
     public static final RegistryObject<Item> QUARTZ_SHOVEL = ITEMS.register("quartz_shovel",
             () -> new ShovelItem(ModToolTiers.QUARTZ, new Item.Properties().attributes(ShovelItem.createAttributes(
@@ -179,7 +179,7 @@ public class ModItems {
             () -> new EmeraldHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.EMERALD, 0, -1.0f))));
     public static final RegistryObject<Item> AMETHYST_HOE = ITEMS.register("amethyst_hoe",
-            () -> new HoeItem(ModToolTiers.AMETHYST, new Item.Properties().attributes(HoeItem.createAttributes(
+            () -> new AmethystHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.AMETHYST, 0, -0.6f))));
     public static final RegistryObject<Item> QUARTZ_HOE = ITEMS.register("quartz_hoe",
             () -> new HoeItem(ModToolTiers.QUARTZ, new Item.Properties().attributes(HoeItem.createAttributes(
