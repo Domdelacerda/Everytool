@@ -2,9 +2,21 @@
   "parent": "minecraft:item/handheld",
   "overrides": [
     {
-      "model": "everytool:item/echo_hoe_active",
+      "model": "everytool:item/echo_hoe_active_1",
       "predicate": {
         "everytool:resonating": 1.0
+      }
+    },
+    {
+      "model": "everytool:item/echo_hoe_active_2",
+      "predicate": {
+        "everytool:resonating": 2.0
+      }
+    },
+    {
+      "model": "everytool:item/echo_hoe_active_3",
+      "predicate": {
+        "everytool:resonating": 3.0
       }
     }
   ],

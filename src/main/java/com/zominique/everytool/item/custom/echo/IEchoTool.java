@@ -27,8 +27,15 @@ public interface IEchoTool {
         stack.set(ModDataComponentTypes.RESONATING_UNTIL.get(), gameTime);
     }
 
-    /** True if still within the resonance window as of currentGameTime. */
     default boolean isResonating(ItemStack stack, long currentGameTime) {
         return currentGameTime < getResonatingUntil(stack);
+    }
+
+    default int getResonanceLevel(ItemStack stack) {
+        return stack.getOrDefault(ModDataComponentTypes.RESONANCE_LEVEL.get(), 0);
+    }
+
+    default void setResonanceLevel(ItemStack stack, int level) {
+        stack.set(ModDataComponentTypes.RESONANCE_LEVEL.get(), level);
     }
 }

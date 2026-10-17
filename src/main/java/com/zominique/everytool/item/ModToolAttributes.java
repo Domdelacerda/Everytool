@@ -1,6 +1,5 @@
 package com.zominique.everytool.item;
 
-import com.zominique.everytool.Everytool;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -48,6 +47,32 @@ public class ModToolAttributes {
             );
     }
 
+    public static ItemAttributeModifiers.Builder flintToolBase(ItemAttributeModifiers.Builder builder) {
+        return builder
+            .add(
+                    Attributes.ENTITY_INTERACTION_RANGE,
+                    new AttributeModifier(
+                            ResourceLocation.fromNamespaceAndPath(
+                                    "everytool", "flint_tool_entity_reach"
+                            ),
+                            1.0,
+                            AttributeModifier.Operation.ADD_VALUE
+                    ),
+                    EquipmentSlotGroup.MAINHAND
+            )
+            .add(
+                    Attributes.BLOCK_INTERACTION_RANGE,
+                    new AttributeModifier(
+                            ResourceLocation.fromNamespaceAndPath(
+                                    "everytool", "flint_tool_block_reach"
+                            ),
+                            1.0,
+                            AttributeModifier.Operation.ADD_VALUE
+                    ),
+                    EquipmentSlotGroup.MAINHAND
+            );
+    }
+
     public static ItemAttributeModifiers.Builder sword(Tier tier) {
         return toolBase(tier, SWORD_BASE_DAMAGE, SWORD_BASE_ATTACK_SPEED_MODIFIER);
     }
@@ -60,8 +85,6 @@ public class ModToolAttributes {
         return toolBase(tier, SHOVEL_BASE_DAMAGE, SHOVEL_BASE_ATTACK_SPEED_MODIFIER);
     }
 
-    // No axe()/hoe() default — vanilla's own per-material axe damage doesn't
-    // follow tier.getAttackDamageBonus() cleanly, so pass an explicit damage value
     public static ItemAttributeModifiers.Builder axe(Tier tier, float baseDamage) {
         return toolBase(tier, baseDamage, AXE_BASE_ATTACK_SPEED_MODIFIER);
     }

@@ -40,12 +40,30 @@ public class ModItemModelProvider extends ItemModelProvider {
                 modLoc(activeName))).end();
     }
 
+    private void handheldMultiLevelPredicateItem(Item item, String predicate, int maxPredicate) {
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
+        String baseName = id.getPath();
+        String activeName = "item/" + baseName + "_active";
+        ItemModelBuilder builder = getBuilder(baseName)
+                .parent(new ModelFile.UncheckedModelFile("item/handheld"))
+                .texture("layer0", modLoc("item/" + baseName));
+
+        for (int i = 1; i <= maxPredicate; i++) {
+            String levelName = activeName + "_" + i;
+            withExistingParent(levelName, mcLoc("item/handheld")).texture
+                    ("layer0", modLoc(levelName));
+            builder.override().predicate(ResourceLocation.fromNamespaceAndPath
+                    (Everytool.MOD_ID, predicate), i).model(getExistingFile(
+                    modLoc(levelName))).end();
+        }
+    }
+
     private void handheldCoalItem(Item item) {
         handheldPredicateItem(item, "lit");
     }
 
     private void handheldEchoItem(Item item) {
-        handheldPredicateItem(item, "resonating");
+        handheldMultiLevelPredicateItem(item, "resonating", 3);
     }
 
     private void handheldPrismarineItem(Item item) {

@@ -6,6 +6,7 @@ import com.zominique.everytool.item.custom.chorus.*;
 import com.zominique.everytool.item.custom.coal.*;
 import com.zominique.everytool.item.custom.echo.*;
 import com.zominique.everytool.item.custom.emerald.*;
+import com.zominique.everytool.item.custom.flint.*;
 import com.zominique.everytool.item.custom.lapis.*;
 import com.zominique.everytool.item.custom.prismarine.*;
 import com.zominique.everytool.item.custom.redstone.*;
@@ -30,7 +31,7 @@ public class ModItems {
             () -> new CoalSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.COAL, 3, -2.4f))));
     public static final RegistryObject<Item> FLINT_SWORD = ITEMS.register("flint_sword",
-            () -> new SwordItem(ModToolTiers.FLINT, new Item.Properties().attributes(SwordItem.createAttributes(
+            () -> new FlintSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
                     ModToolTiers.FLINT, 3, -2.2f))));
     public static final RegistryObject<Item> REDSTONE_SWORD = ITEMS.register("redstone_sword",
             () -> new RedstoneSwordItem(new Item.Properties().attributes(SwordItem.createAttributes(
@@ -64,7 +65,7 @@ public class ModItems {
             () -> new CoalPickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.COAL, 1, -2.8f))));
     public static final RegistryObject<Item> FLINT_PICKAXE = ITEMS.register("flint_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.FLINT, new Item.Properties().attributes(PickaxeItem.createAttributes(
+            () -> new FlintPickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
                     ModToolTiers.FLINT, 1, -2.6f))));
     public static final RegistryObject<Item> REDSTONE_PICKAXE = ITEMS.register("redstone_pickaxe",
             () -> new RedstonePickaxeItem(new Item.Properties().attributes(PickaxeItem.createAttributes(
@@ -98,7 +99,7 @@ public class ModItems {
             () -> new CoalAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.COAL, 6, -3.2f))));
     public static final RegistryObject<Item> FLINT_AXE = ITEMS.register("flint_axe",
-            () -> new AxeItem(ModToolTiers.FLINT, new Item.Properties().attributes(AxeItem.createAttributes(
+            () -> new FlintAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
                     ModToolTiers.FLINT, 6, -3.0f))));
     public static final RegistryObject<Item> REDSTONE_AXE = ITEMS.register("redstone_axe",
             () -> new RedstoneAxeItem(new Item.Properties().attributes(AxeItem.createAttributes(
@@ -132,7 +133,7 @@ public class ModItems {
             () -> new CoalShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.COAL, 2, -3.0f))));
     public static final RegistryObject<Item> FLINT_SHOVEL = ITEMS.register("flint_shovel",
-            () -> new ShovelItem(ModToolTiers.FLINT, new Item.Properties().attributes(ShovelItem.createAttributes(
+            () -> new FlintShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
                     ModToolTiers.FLINT, 2, -2.8f))));
     public static final RegistryObject<Item> REDSTONE_SHOVEL = ITEMS.register("redstone_shovel",
             () -> new RedstoneShovelItem(new Item.Properties().attributes(ShovelItem.createAttributes(
@@ -166,7 +167,7 @@ public class ModItems {
             () -> new CoalHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.COAL, 0, -3.0f))));
     public static final RegistryObject<Item> FLINT_HOE = ITEMS.register("flint_hoe",
-            () -> new HoeItem(ModToolTiers.FLINT, new Item.Properties().attributes(HoeItem.createAttributes(
+            () -> new FlintHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(
                     ModToolTiers.FLINT, 0, -1.8f))));
     public static final RegistryObject<Item> REDSTONE_HOE = ITEMS.register("redstone_hoe",
             () -> new RedstoneHoeItem(new Item.Properties().attributes(HoeItem.createAttributes(

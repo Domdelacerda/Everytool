@@ -41,6 +41,12 @@ public class ModDataComponentTypes {
                     .networkSynchronized(ByteBufCodecs.VAR_LONG)
                     .build());
 
+    public static final RegistryObject<DataComponentType<Integer>> RESONANCE_LEVEL =
+            DATA_COMPONENT_TYPES.register("resonance_level", () -> DataComponentType.<Integer>builder()
+                    .persistent(Codec.INT)
+                    .networkSynchronized(ByteBufCodecs.VAR_INT)
+                    .build());
+
     public static void register(IEventBus eventBus) {
         DATA_COMPONENT_TYPES.register(eventBus);
     }

@@ -2,6 +2,7 @@ package com.zominique.everytool.item;
 
 import com.zominique.everytool.Everytool;
 import com.zominique.everytool.effect.ModEffects;
+import com.zominique.everytool.event.custom.EchoToolEventHandler;
 import com.zominique.everytool.item.custom.coal.ICoalTool;
 import com.zominique.everytool.item.custom.echo.IEchoTool;
 import net.minecraft.resources.ResourceLocation;
@@ -61,7 +62,10 @@ public class ModItemProperties {
                     if (!(item instanceof IEchoTool echoTool) || level == null) {
                         return 0.0F;
                     }
-                    return echoTool.isResonating(stack, level.getGameTime()) ? 1.0F : 0.0F;
+                    if (!echoTool.isResonating(stack, level.getGameTime())) {
+                        return 0.0F;
+                    }
+                    return echoTool.getResonanceLevel(stack);
                 }
         );
     }

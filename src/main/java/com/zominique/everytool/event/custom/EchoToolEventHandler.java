@@ -22,8 +22,8 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Everytool.MOD_ID)
 public class EchoToolEventHandler {
 
-    // Scan radius for echo tool
-    private static final int SCAN_RADIUS = 3;
+    public static final int SCAN_RADIUS = 3;
+    private static final long RESONATING_TIME = 20L;
 
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -55,7 +55,7 @@ public class EchoToolEventHandler {
             if (player instanceof ServerPlayer serverPlayer) {
                 serverPlayer.displayClientMessage(
                         Component.translatable("message.yourmod.echo_tuned", clickedBlock.getName()),
-                        true // action bar, not chat
+                        true
                 );
             }
         }
@@ -77,26 +77,29 @@ public class EchoToolEventHandler {
         Level level = player.level();
         BlockPos center = event.getPos();
 
-        boolean found = false;
-        for (BlockPos pos : BlockPos.betweenClosed(
-                center.offset(-SCAN_RADIUS, -SCAN_RADIUS, -SCAN_RADIUS),
-                center.offset(SCAN_RADIUS, SCAN_RADIUS, SCAN_RADIUS))) {
-            if (level.getBlockState(pos).is(tunedBlock)) {
-                found = true;
-                break;
-            }
-        }
+        int foundAtRadius = findResonanceRadius(level, center, tunedBlock);
 
-        if (found) {
-            // On a miss we deliberately leave the existing window alone —
-            // if a previous break is still within its 1-second window, it
-            // expires naturally rather than being reset early.
-            echoTool.setResonatingUntil(stack, level.getGameTime() + 20L); // 20 ticks = 1 second
+        if (foundAtRadius > 0) {
+            echoTool.setResonanceLevel(stack, foundAtRadius);
+            echoTool.setResonatingUntil(stack, level.getGameTime() + RESONATING_TIME);
 
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 level.playSound(null, center, SoundEvents.SCULK_CLICKING,
-                        SoundSource.PLAYERS, 1.0F, 1.2F);
+                        SoundSource.PLAYERS, 1.0f / (float)foundAtRadius, 1.0f);
             }
         }
+    }
+
+    private static int findResonanceRadius(Level level, BlockPos center, Block tunedBlock) {
+        for (int radius = 1; radius <= SCAN_RADIUS; radius++) {
+            for (BlockPos pos : BlockPos.betweenClosed(
+                    center.offset(-radius, -radius, -radius),
+                    center.offset(radius, radius, radius))) {
+                if (level.getBlockState(pos).is(tunedBlock)) {
+                    return radius;
+                }
+            }
+        }
+        return -1;
     }
 }
